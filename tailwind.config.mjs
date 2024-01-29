@@ -6,7 +6,14 @@ export default {
 
 			colors: {
 
-				"mc_slate" : "#5b626d"
+				"mc_slate": "#5b626d",
+				"mc_black": "#222b37"
+
+			},
+
+			fontFamily: {
+
+				"merriweather": [ "Merriweather", "serif" ]
 
 			}
 

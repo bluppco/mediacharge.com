@@ -1,0 +1,38 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingOneCenter from "../../../atoms/heading/one/Center.astro"
+import ParagraphSmallCenter from "../../../atoms/paragraph/small/center/index.astro"
+import Picture from "../../../atoms/picture/index.astro"
+
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/image"
+
+const data = {
+
+    title: "We scale businesses sustainably and profitably",
+    sub_title: "We help brands and businesses to unlock their potential",
+    description: "Our team is dedicated to partnering with your company to develop the optimal strategy and to deliver premier campaigns that drive profitable growth.",
+    cover: "",
+    file: ""
+
+
+}
+---
+<Container>
+    <section class="grid grid-cols-1 gap-4 py-8">
+        <HeadingOneCenter>{ data.title }</HeadingOneCenter>
+        <p class="text-sm font-graphik_medium text-mc_black text-center">{ data.sub_title }</p>
+        <Picture
+            src={ data.cover }
+            alt={ data.title }
+        />
+        <ParagraphSmallCenter>{ data.description }</ParagraphSmallCenter>
+        <Picture
+            src={ data.file }
+            alt={ data.title }
+        />
+    </section>
+</Container>
