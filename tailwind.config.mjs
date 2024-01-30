@@ -7,7 +7,8 @@ export default {
 			colors: {
 
 				"mc_slate": "#5b626d",
-				"mc_black": "#222b37"
+				"mc_black": "#222b37",
+				"mc_red": "#fd515b"
 
 			},
 
