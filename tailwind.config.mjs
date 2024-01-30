@@ -8,7 +8,9 @@ export default {
 
 				"mc_slate": "#5b626d",
 				"mc_black": "#222b37",
-				"mc_red": "#fd515b"
+				"mc_red": "#fd515b",
+				"mc_light_gray": "#f8f9fa",
+				"mc_gray": "#c9c9c9",
 
 			},
 
