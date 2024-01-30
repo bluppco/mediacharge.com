@@ -1,0 +1,39 @@
+---
+// IMPORTS ASTRO ATOMS
+import HeadingThree from "../../../atoms/heading/three/index.astro"
+import ArrowButton from "../../../atoms/button/arrow/index.astro"
+import Picture from "../../../atoms/picture/index.astro"
+import SmallParagraph from "../../../atoms/paragraph/small/index.astro"
+
+const {
+
+    alt,
+    button_link,
+    button_text,
+    description,
+    icon_alt,
+    icon_src,
+    src,
+    title,
+
+} = Astro.props
+---
+<div class="space-y-8 rounded-lg border border-zinc-300 p-4">
+    <div class="flex gap-4">
+        <div class="size-6 bg-zinc-200">
+            <img
+                src={ icon_src }
+                alt={ icon_alt }
+                class="size-6"
+            />
+        </div>
+        <HeadingThree>{ title }</HeadingThree>
+    </div>
+        <SmallParagraph>{ description }</SmallParagraph>
+        <ArrowButton href={ button_link }>{ button_text }</ArrowButton>
+        <Picture
+            src={ src }
+            alt={ alt }
+        />
+    </div>
+</div>

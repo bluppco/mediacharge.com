@@ -1,0 +1,58 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/image"
+
+// IMPORTS ASTRO COMPONENTS
+import ServiceCard from "./card.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwo from "../../../atoms/heading/two/index.astro"
+
+const data = {
+
+    cover: "",
+    title: "Your Performance is our Mission"
+
+}
+
+const services = Array(7).fill({
+
+   title: "Search Engine Advertising",
+   description: "We believe in numbers",
+   cover: "",
+   button_text: "Start Campaigns with Us",
+   button_link: "",
+   icon_src: ""
+
+})
+---
+<section class="py-16" style=`background-image: url(${ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY })`>
+    <Container>
+        <HeadingTwo>{ data.title }</HeadingTwo>
+        <section class="grid grid-cols-1">
+            {
+
+                services.map( ( value ) => {
+
+                    return(
+                        <ServiceCard
+                            alt={ value.title }
+                            button_link={ value.button_link }
+                            button_text={ value.button_text }
+                            description={ value.description }
+                            icon_alt={ value.title }
+                            icon_src={ value.icon_src }
+                            src={ value.cover }
+                            title={ value.title }
+                        />
+                    )
+
+                })
+
+            }
+        </section>
+    </Container>
+</section>

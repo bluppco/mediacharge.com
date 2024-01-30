@@ -1,0 +1,43 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoWhiteCenter from "../../../atoms/heading/two/white/center/index.astro"
+
+const data = {
+
+    title: "Some clients we support"
+
+}
+
+const image = Array(18).fill({
+
+    file: "/client-1.png"
+
+})
+---
+<section class="bg-mc_black py-10">
+    <Container>
+        <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
+        <div class="flex flex-col items-center">
+            {
+
+                image.map( ( value ) => {
+
+                    return(
+                        <div class="w-32 aspect-[3/2]">
+                            <img
+                                src={ value.file }
+                                alt=""
+                                class="w-full h-full"
+                            />
+                        </div>
+                    )
+
+                })
+
+            }
+        </div>
+    </Container>
+</section>

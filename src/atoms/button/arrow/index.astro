@@ -1,0 +1,15 @@
+---
+import Link from "../../link/index.astro"
+---
+<div>
+    <Link>
+        <button class="flex items-center gap-2 text-xs font-graphik">
+            <slot/>
+            <img
+                src="/icons/top-right-arrow.svg"
+                alt=""
+                class="size-4"
+            />
+        </button>
+    </Link>
+</div>

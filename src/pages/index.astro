@@ -1,16 +1,24 @@
 ---
+// IMPORTS LAYOUTS
+import Layout from "../layouts/Layout.astro"
 
+// IMPORTS COMPONENTS
+import HeaderBanner from "../components/common/header-banner/index.astro"
+import Header from "../components/common/header/index.astro"
+import Hero from "../components/home/hero/index.astro"
+import Services from "../components/home/services/index.astro"
+import Clients from "../components/home/clients/index.astro"
+import About from "../components/home/about/index.astro"
+import WorkWithUs from "../components/home/work-with-us/index.astro"
+import Footer from "../components/common/footer/index.astro"
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+    <HeaderBanner />
+    <Header />
+    <Hero />
+    <Services />
+    <Clients />
+    <About />
+    <WorkWithUs />
+    <Footer />
+</Layout>
