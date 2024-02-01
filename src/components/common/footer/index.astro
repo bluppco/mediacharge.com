@@ -20,9 +20,9 @@ footer_column_four = footer_column_four.filter( ( item ) => item.data.live )
 import { frontmatter as footerColumnThree } from "../../../content/footer-titles/colomn-three-title.md"
 import { frontmatter as footerColumnFour } from "../../../content/footer-titles/colomn-four-title.md"
 ---
-<footer class="bg-mc_light_gray py-10">
+<footer class="bg-mc_light_gray pt-10 pb-32">
     <Container>
-        <section class="grid grid-cols-1 gap-10">
+        <section class="grid grid-cols-1 md:grid-cols-4 gap-10">
             <section class="flex justify-center">
                 <img
                     src="/logo/footer-logo.svg"
@@ -31,7 +31,7 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
                 />
             </section>
             <section class="flex justify-center">
-                <div class="h-full w-72">
+                <div class="h-full md:h-80 w-72 md:w-full">
                     <img
                         src="/images/awards.png"
                         alt=""
@@ -39,7 +39,7 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
                     />
                 </div>
             </section>
-            <section class="flex flex-col items-center gap-6">
+            <section class="flex flex-col items-center md:items-start gap-6">
                 <FooterTitle>{ footerColumnThree.title }</FooterTitle>
                 <ul class="space-y-4">
                     {
@@ -56,7 +56,7 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
 
                 </ul>
             </section>
-            <section class="flex flex-col items-center gap-6">
+            <section class="flex flex-col items-center md:items-start gap-6">
                 <FooterTitle>{ footerColumnFour.title }</FooterTitle>
                 <ul class="space-y-4">
                     {

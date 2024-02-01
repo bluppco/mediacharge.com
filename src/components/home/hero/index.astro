@@ -6,6 +6,7 @@ import Container from "../../../layouts/Container.astro"
 import HeadingOneCenter from "../../../atoms/heading/one/Center.astro"
 import ParagraphSmallCenter from "../../../atoms/paragraph/small/center/index.astro"
 import Picture from "../../../atoms/picture/index.astro"
+import SecondaryButton from "@/atoms/button/secondary/index.astro"
 
 // IMPORTS CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/image"
@@ -15,27 +16,31 @@ const data = {
     title: "We scale businesses sustainably and profitably",
     sub_title: "We help brands and businesses to unlock their potential",
     description: "Our team is dedicated to partnering with your company to develop the optimal strategy and to deliver premier campaigns that drive profitable growth.",
-    cover: "",
-    file: ""
+    cover: "/hero-cover-img.jpg",
+    file: "/hero-img.jpg",
+    button_one_text: "Let's Talk"
 
 
 }
 ---
 <Container>
     <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20 py-8 md:py-12">
-        <div class="flex flex-col justify-center">
+        <div class="flex flex-col gap-4 justify-center">
             <HeadingOneCenter>{ data.title }</HeadingOneCenter>
+            <ParagraphSmallCenter>{ data.description }</ParagraphSmallCenter>
             <div class="flex flex-col md:flex-col-reverse justify-center">
                 <p class="md:hidden text-sm font-graphik_medium text-mc_black text-center">{ data.sub_title }</p>
                 <div class="bg-zinc-200">
                     <img
-                        src={ data.cover }
+                        src={ data.file }
                         alt=""
                         class="h-12 w-full"
                     />
                 </div>
             </div>
-            <ParagraphSmallCenter>{ data.description }</ParagraphSmallCenter>
+            <div class="hidden md:block">
+                <SecondaryButton>{ data.button_one_text }</SecondaryButton>
+            </div>
         </div>
         <!-- <Picture
             src={ data.file }
