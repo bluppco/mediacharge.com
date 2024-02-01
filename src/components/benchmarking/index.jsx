@@ -103,7 +103,6 @@ const BenchmarkingJSX = ( props ) => {
 
                         data.bandwidth.map( ( value, index ) => {
 
-                            console.log( value )
                             return (
                                 <TableRow className={ value.type === "Total" ? "font-semibold" : "" } key={ "bandwidth-saved-" + index }>
                                     <TableCell className="font-semibold">{ value.hits_text }</TableCell>
