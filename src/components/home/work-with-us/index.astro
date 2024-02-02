@@ -8,14 +8,7 @@ import ParagraphSmallCenter from "../../../atoms/paragraph/small/center/index.as
 import PrimaryButton from "../../../atoms/button/primary/index.astro"
 import SecondaryButton from "../../../atoms/button/secondary/index.astro"
 
-const data = {
-
-    title: "Start working with Us",
-    description: "Let's get in touch to find out how we could support you in the future.",
-    button_one_text: "Contact Sales",
-    button_two_text: "Let's Talk",
-
-}
+const { data } = Astro.props
 ---
 <Container>
     <section class="space-y-2 pb-10">

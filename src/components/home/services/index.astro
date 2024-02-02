@@ -11,23 +11,7 @@ import ServiceCard from "./card.astro"
 // IMPORTS ASTRO ATOMS
 import HeadingTwo from "../../../atoms/heading/two/index.astro"
 
-const data = {
-
-    cover: "",
-    title: "Your Performance is our Mission"
-
-}
-
-const services = Array(7).fill({
-
-   title: "Search Engine Advertising",
-   description: "We believe in numbers",
-   cover: "/sea.jpg",
-   button_text: "Start Campaigns with Us",
-   button_link: "",
-   icon_src: "/search.svg"
-
-})
+const { data, services } = Astro.props
 ---
 <section class="py-16" style=`background-image: url(${ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY })`>
     <Container>

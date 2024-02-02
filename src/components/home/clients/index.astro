@@ -5,12 +5,8 @@ import Container from "../../../layouts/Container.astro"
 // IMPORTS ASTRO ATOMS
 import HeadingTwoWhiteCenter from "../../../atoms/heading/two/white/center/index.astro"
 
-const data = {
-
-    title: "Some clients we support"
-
-}
-
+const { data } = Astro.props
+// const images = data.images.sort(( a,b ) => a.order -b.order )
 const image = Array(18).fill({
 
     file: "/client-1.png"
