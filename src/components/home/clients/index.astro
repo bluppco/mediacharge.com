@@ -5,13 +5,12 @@ import Container from "../../../layouts/Container.astro"
 // IMPORTS ASTRO ATOMS
 import HeadingTwoWhiteCenter from "../../../atoms/heading/two/white/center/index.astro"
 
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/image"
+
 const { data } = Astro.props
-// const images = data.images.sort(( a,b ) => a.order -b.order )
-const image = Array(18).fill({
 
-    file: "/client-1.png"
-
-})
+const images = data.images.sort(( a,b ) => a.order -b.order )
 ---
 <section class="bg-mc_black py-10">
     <Container>
@@ -19,13 +18,13 @@ const image = Array(18).fill({
         <div class="grid md:grid-cols-4">
             {
 
-                image.map( ( value ) => {
+                images.map( ( value ) => {
 
                     return(
                         <div class="flex justify-center">
                             <div class="w-32 aspect-[3/2]">
                                 <img
-                                    src={ value.file }
+                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                     alt=""
                                     class="w-full h-full"
                                 />

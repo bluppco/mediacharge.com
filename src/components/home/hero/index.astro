@@ -22,21 +22,14 @@ const { data } = Astro.props
             </div>
             <div class="flex flex-col md:flex-col-reverse justify-center">
                 <p class="md:hidden text-sm font-graphik_medium text-mc_black text-center">{ data.sub_title }</p>
-                <div class="bg-zinc-200 mt-2 hidden md:block">
-                    <img
-                        src={ data.file }
-                        alt=""
-                        class="h-12 w-full"
-                    />
-                </div>
-                <!-- {
+                {
 
                     data.images.map( ( value ) => {
 
                         return(
                             <div class="bg-zinc-200 mt-2">
                                 <img
-                                    src={ value[0].file }
+                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                     alt=""
                                     class="h-12 w-full"
                                 />
@@ -45,7 +38,7 @@ const { data } = Astro.props
 
                     })
 
-                } -->
+                }
             </div>
             <div class="hidden md:block mt-2">
                 <SecondaryButton>{ data.button_one_text }</SecondaryButton>
