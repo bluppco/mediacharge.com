@@ -10,10 +10,10 @@ import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/image"
 
 const { data, clients } = Astro.props
 ---
-<section class="bg-mc_black py-10 px-60">
+<section class="bg-mc_black py-10 md:px-60">
     <Container>
         <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
-        <section class="grid grid-cols-4 gap-x-4 gap-y-10">
+        <section class="grid md:grid-cols-4 gap-x-4 gap-y-4 md:gap-y-10">
             {
 
                 clients.map( ( value ) => {

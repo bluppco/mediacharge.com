@@ -39,7 +39,7 @@ module.exports = {
 			colors: {
 
 				"mc_slate": "#5b626d",
-				"mc_black_": "#222b37",
+				"mc_charcoal_black": "#222b37",
 				"mc_red": "#fd515b",
 				"mc_light_gray": "#f8f9fa",
 				"mc_gray": "#c9c9c9",

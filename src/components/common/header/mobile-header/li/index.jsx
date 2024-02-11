@@ -1,9 +1,9 @@
-const HeaderMobileItem = ( props ) => {
+const Li = ( props ) => {
 
     const { href } = props
 
     return(
-        <li className="text-lg uppercase">
+        <li className="uppercase font-graphik tracking-wider">
             <a href={ href }>
                 { props.children }
             </a>
@@ -12,4 +12,4 @@ const HeaderMobileItem = ( props ) => {
 
 }
 
-export default HeaderMobileItem
+export default Li
