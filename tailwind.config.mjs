@@ -43,7 +43,11 @@ module.exports = {
 				"mc_red": "#fd515b",
 				"mc_light_gray": "#f8f9fa",
 				"mc_gray": "#c9c9c9",
-				"mc_black": "#12171f"
+				"mc_black": "#12171f",
+				"mc_dark_gray": "#79868bde",
+				"mc_light_pink": "#ffe2e3",
+				"mc_orange": "#fd515b"
+
 			},
 
 			fontFamily: {
