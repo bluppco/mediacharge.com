@@ -21,7 +21,7 @@ footer_column_four = footer_column_four.filter( ( item ) => item.data.live )
 import { frontmatter as footerColumnThree } from "../../../content/footer-titles/colomn-three-title.md"
 import { frontmatter as footerColumnFour } from "../../../content/footer-titles/colomn-four-title.md"
 ---
-<footer class="bg-mc_light_gray pt-10 pb-32 px-60">
+<footer class="bg-mc_light_gray pt-10 pb-32 md:px-60">
     <Container>
         <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <section class="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -43,7 +43,7 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
                 </section>
             </section>
             <section class="grid grid-cols-1 md:grid-cols-2">
-                <section class="flex flex-col items- gap-6">
+                <section class="flex flex-col gap-6">
                     <FooterTitle>{ footerColumnThree.title }</FooterTitle>
                     <ul class="space-y-4">
                         {
@@ -60,7 +60,7 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
 
                     </ul>
                 </section>
-                <section class="flex flex-col items-center md:items-start gap-6">
+                <section class="flex flex-col items-center md:items-start gap-6 pt-10 md:pt-0">
                     <FooterTitle>{ footerColumnFour.title }</FooterTitle>
                     <ul class="space-y-4">
                         {

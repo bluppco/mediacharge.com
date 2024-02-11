@@ -20,6 +20,7 @@ const { data } = Astro.props
             <div class="hidden md:block">
                 <ParagraphSmall>{ data.description }</ParagraphSmall>
             </div>
+            <p class="md:hidden text-center text-sm font-graphik_medium text-mc_charcoal_black">"We help brands and businesses to unlock their potential"</p>
             <div class="flex flex-col md:flex-col-reverse justify-center">
                 <p class="md:hidden text-sm font-graphik_medium text-mc_black text-center">{ data.sub_title }</p>
                 {
@@ -27,7 +28,7 @@ const { data } = Astro.props
                     data.images.map( ( value ) => {
 
                         return(
-                            <div class="bg-zinc-200 mt-2">
+                            <div class="bg-zinc-200 mt-2 hidden md:block">
                                 <img
                                     src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
                                     alt=""
@@ -58,12 +59,22 @@ const { data } = Astro.props
         <div class="md:hidden">
             <ParagraphSmall>{ data.description }</ParagraphSmall>
         </div>
-        <div class="bg-zinc-200 mt-2 md:hidden">
-            <img
-                src={ data.file }
-                alt=""
-                class="h-12 w-full"
-            />
-        </div>
+        {
+
+            data.images.map( ( value ) => {
+
+                return(
+                    <div class="bg-zinc-200 mt-2 md:hidden">
+                        <img
+                            src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
+                            alt=""
+                            class="h-12 w-full"
+                        />
+                    </div>
+                )
+
+            })
+
+        }
     </section>
 </Container>
