@@ -14,9 +14,9 @@ import { getCollection } from "astro:content"
 let header_data = await getCollection("header")
 header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 ---
-<header class="py-4 hidden md:flex items-center fixed top-0 z-[100] w-full bg-white border-b border-zinc-200">
+<header class="h-16 hidden md:flex items-center fixed top-0 z-[100] w-full bg-white">
     <Container>
-        <nav class="flex items-center justify-between">
+        <nav class="flex items-center justify-between h-full">
             <section class="flex items-center gap-10">
                 <div class="w-36 aspect-[3/1]">
                     <a href="/" aria-label="logo">
@@ -45,7 +45,7 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
                                                     class="w-5 h-5"
                                                     alt="dropdown menu icon"
                                                 />
-                                                <div class="hidden group-hover:block group-hover:flex-col absolute bg-white left-0 z-20 top-14 w-full gap-2">
+                                                <div class="hidden group-hover:block group-hover:flex-col absolute bg-white left-0 z-20 top-16 w-full gap-2">
                                                     {
 
                                                         item.data.slug === "services" &&
