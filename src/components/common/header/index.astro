@@ -41,12 +41,12 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
                                                 class="w-5 h-5"
                                                 alt="dropdown menu icon"
                                             />
-                                            <div class="hidden group-hover:block group-hover:flex-col absolute bg-white left-0 z-20 top-16 w-full gap-2">
+                                            <div class="hidden group-hover:block group-hover:flex-col absolute bg-white left-0 z-20 top-10 w-full gap-2">
                                                 {
 
                                                     item.data.slug === "services" &&
 
-                                                    <div class="grid grid-cols-4 gap-x-10 gap-y-14 p-10">
+                                                    <div class="grid grid-cols-4 gap-x-10 gap-y-14 px-10 pt-16 pb-12">
                                                     {
 
                                                         item.data.items.map( ( sub_item, sub_item_index ) => {
@@ -81,7 +81,7 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 
                                                     item.data.slug === "industries" &&
 
-                                                    <section class="grid grid-cols-2 gap-10 pt-10 pb-4">
+                                                    <section class="grid grid-cols-2 gap-10 pt-16 pb-4">
                                                         <div class="pl-10 space-y-6">
                                                             <p class="font-graphik_medium text-2xl text-mc_black">Industries</p>
                                                             <div class="grid grid-cols-2 gap-4">
@@ -111,35 +111,39 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
                                                                 }
                                                             </div>
                                                         </div>
-                                                        <div>
+                                                        <div class="pt-6">
                                                             <p class="font-graphik_medium text-2xl text-mc_black">Recent Publications</p>
-                                                            <div class="space-y-2 pt-6">
-                                                                <div class="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6">
-                                                                    <div class="w-full h-full bg-zinc-200">
-                                                                        <img
-                                                                            src="/images/financial-prudence.png"
-                                                                            alt=""
-                                                                            class="w-full h-full object-cover"
-                                                                        />
+                                                            <div class="pt-6">
+                                                                <Link href="/publications/navigating-financial-prudence-a-new-lens-for-marketing-strategies" aria_label="explore financial prudence">
+                                                                    <div class="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6">
+                                                                        <div class="w-full h-full bg-zinc-200">
+                                                                            <img
+                                                                                src="/images/financial-prudence.png"
+                                                                                alt=""
+                                                                                class="w-full h-full object-cover"
+                                                                            />
+                                                                        </div>
+                                                                        <div class="col-span-2 space-y-2">
+                                                                            <p class="font-graphik_medium text-sm text-mc_black">Navigating Financial Prudence: A New Lens for Marketing Strategies</p>
+                                                                            <p class="text-light font-merriweather text-sm text-mc_black leading-relaxed">In the dynamic realm of business, the first response to financial crunches often revolves around slashing marketing budgets. However, this reflex may not always</p>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="col-span-2 space-y-2">
-                                                                        <p class="font-graphik_medium text-sm text-mc_black">Navigating Financial Prudence: A New Lens for Marketing Strategies</p>
-                                                                        <p class="text-light font-merriweather text-sm text-mc_black leading-relaxed">In the dynamic realm of business, the first response to financial crunches often revolves around slashing marketing budgets. However, this reflex may not always</p>
+                                                                </Link>
+                                                                <Link href="/publications/chatgpt-market-share" aria_label="explore chatgpt">
+                                                                    <div class="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6 mt-3">
+                                                                        <div class="w-full h-full bg-zinc-200">
+                                                                            <img
+                                                                                src="/images/chatgpt.jpg"
+                                                                                alt=""
+                                                                                class="w-full h-full object-cover"
+                                                                            />
+                                                                        </div>
+                                                                        <div class="col-span-2 space-y-2">
+                                                                            <p class="font-graphik_medium text-sm text-mc_black">ChatGPT and Bing Market Share jumps up to 7%</p>
+                                                                            <p class="text-light font-merriweather text-sm text-mc_black leading-relaxed">Bing and ChatGPT - surpass a significant 7% market share in global search queries, a unique opportunity is unfolding for advertisers.</p>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6">
-                                                                    <div class="w-full h-full bg-zinc-200">
-                                                                        <img
-                                                                            src="/images/chatgpt.jpg"
-                                                                            alt=""
-                                                                            class="w-full h-full object-cover"
-                                                                        />
-                                                                    </div>
-                                                                    <div class="col-span-2 space-y-2">
-                                                                        <p class="font-graphik_medium text-sm text-mc_black">ChatGPT and Bing Market Share jumps up to 7%</p>
-                                                                        <p class="text-light font-merriweather text-sm text-mc_black leading-relaxed">Bing and ChatGPT - surpass a significant 7% market share in global search queries, a unique opportunity is unfolding for advertisers.</p>
-                                                                    </div>
-                                                                </div>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </section>
@@ -163,7 +167,7 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
                 </ul>
             </div>
         </section>
-        <section class="flex items-center gap-8">
+        <section class="flex items-center gap-8 relative z-50">
             <div>
                 <p class="text-xs text-mc_black">Sales Hotline (worldwide)</p>
                 <p class="font-graphik text-mc_black">+498926200255</p>

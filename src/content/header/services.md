@@ -27,35 +27,35 @@ items: [
     },
     {
         title: Creatives that Convert,
-        slug: growth-strategy-consulting,
+        slug: creatives,
         description: Are you looking for an agency that delivers, tests and continuously improves the best creatives in the shortest possible time? Try Mediacharge!,
         src: pie-chart.svg,
         order: 4
     },
     {
         title: Lead Funnel Optimization,
-        slug: growth-strategy-consulting,
+        slug: lead-funnel-optimization,
         description: We polish your lead funnel to lift your conversion rate to new heights. Mediacharge - The Performance Agency.,
         src: filter-funnel.svg,
         order: 5
     },
     {
         title: LinkedIn Advertising,
-        slug: growth-strategy-consulting,
+        slug: linkedin-advertisement,
         description: We plan your LinkedIn campaigns from strategy to reporting. Arrange a free consultation today.,
         src: target.svg,
         order: 6
     },
     {
         title: Social Media Management,
-        slug: growth-strategy-consulting,
+        slug: social-media-agency-munich,
         description: Want to see high-quality posts on your company profile every week? Let's talk about our social media management services.,
         src: social-media.svg,
         order: 7
     },
     {
         title: Landingpages that Convert,
-        slug: growth-strategy-consulting,
+        slug: landing-pages,
         description: We deliver landing pages that really convert. Because the ad alone is not everything that is decisive for conversion.,
         src: browser.svg,
         order: 8
