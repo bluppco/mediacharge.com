@@ -1,7 +1,95 @@
 ---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/Container.astro"
+
+// IMPORTS ASTRO COMPONENTS
 import HeaderMobile from "./mobile-header/index.jsx"
+
+// IMPORTS ASTRO ATOMS
+import SecondaryButton from "@/atoms/button/primary/index.astro"
+
+import { getCollection } from "astro:content"
+
+let header_data = await getCollection("header")
+header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 ---
-<header></header>
+<header class="py-4 hidden md:flex items-center fixed top-0 z-[100] w-full bg-white border-b border-zinc-200">
+    <Container>
+        <nav class="flex items-center justify-between">
+            <section class="flex items-center gap-10">
+                <div class="w-36 aspect-[3/1]">
+                    <a href="/" aria-label="logo">
+                        <img
+                            src="/logo/header-logo.svg"
+                            alt=""
+                            class="w-36 aspect-[3/1] object-contain"
+                        />
+                    </a>
+                </div>
+                <div class="flex gap-10 items-center">
+                    <ul class="flex gap-6">
+                        {
+
+                            header_data.map( ( item ) => {
+
+                                return (
+                                    <li class="font-medium font-graphik text-sm flex items-center gap-2 relative group cursor-pointer">
+                                        <a href={ "/" + item.data.slug } aria-label={"explore " + item.data.title }>{ item.data.title }</a>
+                                        {
+
+                                            item.data.has_dropdown &&
+                                            <div>
+                                                <img
+                                                    src="/icons/dropdown.svg"
+                                                    class="w-4 h-4"
+                                                    alt="dropdown menu icon"
+                                                />
+                                                <div class="hidden group-hover:block group-hover:flex-col absolute p-4 bg-white left-0 z-20 top-[28px] w-48 gap-2">
+                                                    <div class="flex flex-col">
+                                                    {
+
+                                                        item.data.items.map( ( sub_item, sub_item_index ) => {
+
+                                                            return(
+                                                                <div class="py-2">
+                                                                    <a
+                                                                        href={ "/" + item.data.slug + "/" + sub_item.slug }
+                                                                        class="text-black"
+                                                                        aria-label={ "explore" + sub_item.title }
+                                                                    >
+                                                                        <div class="text-sm font-light capitalize tracking-wide">{ sub_item.title }</div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class={`w-full bg-zinc-200 h-px ${ sub_item_index + 1 < item.data.items.length ? "block" : "hidden" }`}></div>
+                                                            )
+
+                                                        })
+
+                                                    }
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        }
+                                    </li>
+                                )
+
+                            })
+
+                        }
+                    </ul>
+                </div>
+            </section>
+            <section class="grid grid-cols-2 gap-4">
+                <div>
+                    <p class="text-xs text-mc_black">Sales Hotline (worldwide)</p>
+                    <p class="font-graphik text-mc_black">+498926200255</p>
+                </div>
+                <SecondaryButton>Let's Talk</SecondaryButton>
+            </section>
+        </nav>
+    </Container>
+</header>
 <HeaderMobile
     client:load
 />
