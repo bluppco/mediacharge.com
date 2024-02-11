@@ -1,4 +1,12 @@
 ---
+import { homeAPI } from "../api/home"
+
+const runtime = Astro.locals.runtime
+const data = await homeAPI( runtime.env.ENVIRONMENT )
+const env = runtime.env.ENVIRONMENT
+
+const { home_data, services, meta, clients } = data
+
 // IMPORTS LAYOUTS
 import Layout from "../layouts/Layout.astro"
 
@@ -12,13 +20,23 @@ import About from "../components/home/about/index.astro"
 import WorkWithUs from "../components/home/work-with-us/index.astro"
 import Footer from "../components/common/footer/index.astro"
 ---
-<Layout>
+<Layout
+    title={ meta.title }
+    description={ meta.description }
+    image={ meta.cover }
+>
     <HeaderBanner />
     <Header />
-    <Hero />
-    <Services />
-    <Clients />
-    <About />
-    <WorkWithUs />
+    <Hero data={ home_data.hero } />
+    <Services
+        data={ home_data.services }
+        services={ services }
+    />
+    <Clients
+        data={ home_data.clients }
+        clients={ clients }
+    />
+    <About data={ home_data.about } />
+    <WorkWithUs data={ home_data.work_with_us } />
     <Footer />
 </Layout>

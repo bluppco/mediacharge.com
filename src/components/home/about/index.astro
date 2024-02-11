@@ -2,17 +2,14 @@
 // IMPORTS ASTRO ATOMS
 import HeadingTwoCenter from "../../../atoms/heading/two/center/index.astro"
 import ParagraphRegularCenter from "../../../atoms/paragraph/regular/center/index.astro"
-import Container from "../../../layouts/Container.astro";
 
-const data = {
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
 
-    title: "About Mediacharge",
-    description: "Mediacharge is known for its analytical approach as a full-service performance agency focusing on international markets. We enable clients, regardless of location, to enter new markets, advised and managed by locals. This gives companies a chance to expand very quickly and plan and implement campaigns with the best experience in the new target markets. For Mediacharge, performance marketing goes far beyond PPC channels, and customers have a journey from first impression to checkout. Our holistically thinking team, therefore, not only plans the individual performance channels but also strategically integrates into the processes of branding, but also the value creation of our clients in such a way that not only the best sales are achieved in the short term but also the most sustainable successes in the long term."
-
-}
+const { data } = Astro.props
 ---
 <Container>
-    <section class="py-16 space-y-10">
+    <section class="py-16 space-y-10 md:px-20">
         <HeadingTwoCenter>{ data.title }</HeadingTwoCenter>
         <ParagraphRegularCenter>{ data.description }</ParagraphRegularCenter>
     </section>
