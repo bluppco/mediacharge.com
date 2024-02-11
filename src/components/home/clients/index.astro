@@ -8,26 +8,28 @@ import HeadingTwoWhiteCenter from "../../../atoms/heading/two/white/center/index
 // IMPORTS CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/image"
 
-const { data } = Astro.props
-
-const images = data.images.sort(( a,b ) => a.order -b.order )
+const { data, clients } = Astro.props
 ---
-<section class="bg-mc_black py-10">
+<section class="bg-mc_black py-10 px-60">
     <Container>
         <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
-        <div class="grid md:grid-cols-4">
+        <section class="grid grid-cols-4 gap-x-4 gap-y-10">
             {
 
-                images.map( ( value ) => {
+                clients.map( ( value ) => {
 
                     return(
-                        <div class="flex justify-center">
-                            <div class="w-32 aspect-[3/2]">
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="h-20 w-full">
                                 <img
-                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
-                                    alt=""
-                                    class="w-full h-full"
+                                    src={ CDN_LINK + value.cover + "?quality=" + IMAGE_QUALITY }
+                                    alt={ value.title }
+                                    class="w-full h-full object-contain"
                                 />
+                            </div>
+                            <p class="text-white text-sm text-center">{ value.tag }</p>
+                            <div class="pt-4">
+                                <p class="text-white text-sm font-merriweather font-light text-center leading-relaxed">{ value.description }</p>
                             </div>
                         </div>
                     )
@@ -35,6 +37,6 @@ const images = data.images.sort(( a,b ) => a.order -b.order )
                 })
 
             }
-        </div>
+        </section>
     </Container>
 </section>

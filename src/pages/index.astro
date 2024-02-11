@@ -5,7 +5,7 @@ const runtime = Astro.locals.runtime
 const data = await homeAPI( runtime.env.ENVIRONMENT )
 const env = runtime.env.ENVIRONMENT
 
-const { home_data, services, meta } = data
+const { home_data, services, meta, clients } = data
 
 // IMPORTS LAYOUTS
 import Layout from "../layouts/Layout.astro"
@@ -32,7 +32,10 @@ import Footer from "../components/common/footer/index.astro"
         data={ home_data.services }
         services={ services }
     />
-    <Clients data={ home_data.clients } />
+    <Clients
+        data={ home_data.clients }
+        clients={ clients }
+    />
     <About data={ home_data.about } />
     <WorkWithUs data={ home_data.work_with_us } />
     <Footer />
