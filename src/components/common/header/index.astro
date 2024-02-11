@@ -34,7 +34,7 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
                             header_data.map( ( item ) => {
 
                                 return (
-                                    <li class="font-medium font-graphik text-sm flex items-center gap-2 group cursor-pointer">
+                                    <li class="font-medium font-graphik text-sm flex items-center gap-1 group cursor-pointer">
                                         <a href={ "/" + item.data.slug } aria-label={"explore " + item.data.title }>{ item.data.title }</a>
                                         {
 
@@ -42,7 +42,7 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
                                             <div>
                                                 <img
                                                     src="/icons/dropdown.svg"
-                                                    class="w-4 h-4"
+                                                    class="w-5 h-5"
                                                     alt="dropdown menu icon"
                                                 />
                                                 <div class="hidden group-hover:block group-hover:flex-col absolute bg-white left-0 z-20 top-14 w-full gap-2">
