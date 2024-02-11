@@ -1,0 +1,16 @@
+---
+// IMPORTS ASTRO ATOMS
+import HeadingTwoCenter from "../../../atoms/heading/two/center/index.astro"
+import ParagraphRegularCenter from "../../../atoms/paragraph/regular/center/index.astro"
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
+const { data } = Astro.props
+---
+<Container>
+    <section class="py-16 space-y-10 md:px-20">
+        <HeadingTwoCenter>{ data.title }</HeadingTwoCenter>
+        <ParagraphRegularCenter>{ data.description }</ParagraphRegularCenter>
+    </section>
+</Container>

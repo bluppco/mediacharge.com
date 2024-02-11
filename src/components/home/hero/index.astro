@@ -1,0 +1,69 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingOneCenter from "../../../atoms/heading/one/Center.astro"
+import ParagraphSmall from "../../../atoms/paragraph/small/index.astro"
+import Picture from "../../../atoms/picture/index.astro"
+import SecondaryButton from "@/atoms/button/secondary/index.astro"
+
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/image"
+
+const { data } = Astro.props
+---
+<Container>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20 py-8 md:py-12">
+        <div class="flex flex-col gap-4 justify-center">
+            <HeadingOneCenter>{ data.title }</HeadingOneCenter>
+            <div class="hidden md:block">
+                <ParagraphSmall>{ data.description }</ParagraphSmall>
+            </div>
+            <div class="flex flex-col md:flex-col-reverse justify-center">
+                <p class="md:hidden text-sm font-graphik_medium text-mc_black text-center">{ data.sub_title }</p>
+                {
+
+                    data.images.map( ( value ) => {
+
+                        return(
+                            <div class="bg-zinc-200 mt-2">
+                                <img
+                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
+                                    alt=""
+                                    class="h-12 w-full"
+                                />
+                            </div>
+                        )
+
+                    })
+
+                }
+            </div>
+            <div class="hidden md:block mt-2">
+                <SecondaryButton>{ data.button_one_text }</SecondaryButton>
+            </div>
+        </div>
+        <!-- <Picture
+            src={ data.file }
+            alt={ data.title }
+        /> -->
+        <div class="w-full aspect-square bg-zinc-200">
+            <img
+                src={ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY }
+                alt=""
+                class="h-full w-full"
+            />
+        </div>
+        <div class="md:hidden">
+            <ParagraphSmall>{ data.description }</ParagraphSmall>
+        </div>
+        <div class="bg-zinc-200 mt-2 md:hidden">
+            <img
+                src={ data.file }
+                alt=""
+                class="h-12 w-full"
+            />
+        </div>
+    </section>
+</Container>
