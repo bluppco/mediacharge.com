@@ -47,7 +47,7 @@ Visit http://localhost:4321 in your browser to view the cloned website.
 3. Graphik Bold - 8font
 
 #### Headings
-- One : HeadingOne -
-- Two : HeadingTwo -
-- Three : HeadingThree -
-- Four : headingFour -
+- One : HeadingOne - text-30px md:text-36px font- Graphik Medium
+- Two : HeadingTwo - text-24px font- Graphik Medium
+- Three : HeadingThree - text-16px font- Graphik Medium
+- Four : headingFour - text-18px font- Graphik Medium
