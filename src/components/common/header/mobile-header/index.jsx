@@ -7,6 +7,9 @@ import { useState } from "react"
 // IMPORTS COMPONENTS
 import Li from "./li/index"
 
+// IMPORTS ATOMS
+import Link from "@/atoms/link/jsx/index.jsx"
+
 const HeaderMobile = ( props ) => {
 
     const [ isOpen, updateOpen ] = useState( false )
@@ -14,7 +17,7 @@ const HeaderMobile = ( props ) => {
     return (
         <header className="md:hidden bg-white px-4 z-[100] py-4 border-b border-gray-100">
             <div className="flex justify-between items-center relative">
-                <a href="/">
+                <Link href="/" aria_label="">
                     <div className="w-24 aspect-[5/2]">
                         <img
                             src="/logo/header-logo.svg"
@@ -22,26 +25,32 @@ const HeaderMobile = ( props ) => {
                             className="w-full h-full"
                         />
                     </div>
-                </a>
-                <div onClick={ () => updateOpen( !isOpen ) }>
-                    {
+                </Link>
+                <div className="flex items-center gap-6">
+                    <div>
+                        <p className="text-xs text-mc_black">Sales Hotline (worldwide)</p>
+                        <p className="text-sm font-graphik text-mc_black text-right">+498926200255</p>
+                    </div>
+                    <div onClick={ () => updateOpen( !isOpen ) }>
+                        {
 
-                        isOpen &&
-                        <img
-                            src="/icons/close.svg"
-                            className="w-6 aspect-square"
-                        />
+                            isOpen &&
+                            <img
+                                src="/icons/close.svg"
+                                className="w-6 aspect-square"
+                            />
 
-                    }
-                    {
+                        }
+                        {
 
-                        !isOpen &&
-                        <img
-                            src="/icons/menu.svg"
-                            className="w-5 aspect-square"
-                        />
+                            !isOpen &&
+                            <img
+                                src="/icons/menu.svg"
+                                className="w-5 aspect-square"
+                            />
 
-                    }
+                        }
+                    </div>
                 </div>
             </div>
             <AnimatePresence initial={false}>

@@ -3,12 +3,12 @@
 import { frontmatter as benchmarking } from "@/content/benchmarking/home.mdx"
 
 // IMPORT LAYOUTS
-import Layout from "@/layouts/Layout.astro"
-import Container from "@/layouts/Container.astro"
+import Layout from "@/layouts/layout/index.astro"
+import Container from "@/layouts/container/index.astro"
 
 // IMPORT COMPONENTS
 import Footer from "@/components/common/footer/index.astro"
-import Header from "@/components/common/header/index.astro"
+import Header from "@/components/common/header/index.jsx"
 import HeaderBanner from "@/components/common/header-banner/index.astro"
 import BenchmarkingJSX from "@/components/benchmarking"
 ---
@@ -18,7 +18,7 @@ import BenchmarkingJSX from "@/components/benchmarking"
 	image=""
 >
     <HeaderBanner />
-    <Header />
+    <Header client:load  />
     <section class="py-40">
         <Container>
             <BenchmarkingJSX client:load data={ benchmarking }/>

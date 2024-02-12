@@ -1,17 +1,18 @@
 ---
 // IMPORTS ASTRO LAYOUTS
-import Container from "../../../layouts/Container.astro"
+import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
-import HeadingOneCenter from "../../../atoms/heading/one/Center.astro"
-import ParagraphSmall from "../../../atoms/paragraph/small/index.astro"
-import Picture from "../../../atoms/picture/index.astro"
+import HeadingOneCenter from "@/atoms/heading/one/center/index.astro"
+import ParagraphSmall from "@/atoms/paragraph/small/index.astro"
+import Picture from "@/atoms/picture/index.astro"
 import SecondaryButton from "@/atoms/button/secondary/index.astro"
 
-// IMPORTS CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/image"
+const {
 
-const { data } = Astro.props
+    data
+
+} = Astro.props
 ---
 <Container>
     <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20 py-8 md:py-12 md:mt-16">
@@ -28,11 +29,11 @@ const { data } = Astro.props
                     data.images.map( ( value ) => {
 
                         return(
-                            <div class="bg-zinc-200 mt-2 hidden md:block">
-                                <img
-                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
+                            <div class="h-12 w-full bg-zinc-200 mt-2 hidden md:block">
+                                <Picture
+                                    src={ value.file }
                                     alt=""
-                                    class="h-12 w-full"
+                                    IMAGE_WIDTH="720"
                                 />
                             </div>
                         )
@@ -45,15 +46,11 @@ const { data } = Astro.props
                 <SecondaryButton>{ data.button_one_text }</SecondaryButton>
             </div>
         </div>
-        <!-- <Picture
-            src={ data.file }
-            alt={ data.title }
-        /> -->
         <div class="w-full aspect-square bg-zinc-200">
-            <img
-                src={ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY }
-                alt=""
-                class="h-full w-full"
+            <Picture
+                src={ data.cover }
+                alt={ data.title }
+                IMAGE_WIDTH="720"
             />
         </div>
         <div class="md:hidden">
@@ -64,11 +61,10 @@ const { data } = Astro.props
             data.images.map( ( value ) => {
 
                 return(
-                    <div class="bg-zinc-200 mt-2 md:hidden">
-                        <img
-                            src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
+                    <div class="h-12 w-full bg-zinc-200 mt-2 md:hidden">
+                        <Picture
+                            src={ value.file }
                             alt=""
-                            class="h-12 w-full"
                         />
                     </div>
                 )

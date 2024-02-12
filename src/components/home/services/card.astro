@@ -1,12 +1,9 @@
 ---
 // IMPORTS ASTRO ATOMS
-import HeadingThree from "../../../atoms/heading/three/index.astro"
-import ArrowButton from "../../../atoms/button/arrow/index.astro"
-import Picture from "../../../atoms/picture/index.astro"
-import SmallParagraph from "../../../atoms/paragraph/small/index.astro"
-
-// IMPORTS CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "@/constants/image"
+import HeadingThree from "@/atoms/heading/three/index.astro"
+import ArrowButton from "@/atoms/button/arrow/index.astro"
+import Picture from "@/atoms/picture/index.astro"
+import SmallParagraph from "@/atoms/paragraph/small/index.astro"
 
 const {
 
@@ -19,57 +16,49 @@ const {
     index,
     src,
     title,
+    CDN_LINK,
+    PROJECT
 
 } = Astro.props
 ---
-<div class={` ${ src ? "md:grid-cols-2 h-full" : "md:grid-cols-1 h-full" } grid rounded-lg border border-zinc-300 bg-white overflow-hidden`}>
-    <div class={` ${ src ? "justify-center" : "" } flex flex-col gap-6 p-4`}>
-        <div class="flex items-center gap-2">
-            {
+<div class={` ${ src ? "md:grid-cols-2 h-full" : "md:grid-cols-1 h-full" } grid rounded-lg border border-[#e0e6e8] bg-white overflow-hidden`}>
+    <div class={` ${ src ? "justify-center" : "justify-between" } flex flex-col gap-6 p-4`}>
+        <div class="flex flex-col gap-6">
+            <div class="flex items-center gap-2">
+                {
 
-                icon_src.map( ( value ) => {
+                    icon_src.map( ( value ) => {
 
-                    return(
-                        <div class="size-6">
-                            <img
-                                src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
-                                alt={ icon_alt }
-                                class="size-6"
-                            />
-                        </div>
-                    )
+                        return(
+                            <div class="size-6">
+                                <img
+                                    src={ CDN_LINK + PROJECT + "/" + value.file + "?quality=80" }
+                                    alt={ icon_alt }
+                                    class="size-6"
+                                />
+                            </div>
+                        )
 
-                })
+                    })
 
-            }
-            <HeadingThree>{ title }</HeadingThree>
+                }
+                <HeadingThree>{ title }</HeadingThree>
+            </div>
+            <SmallParagraph>{ description }</SmallParagraph>
         </div>
-        <SmallParagraph>{ description }</SmallParagraph>
         <ArrowButton href={ button_link }>{ button_text }</ArrowButton>
     </div>
-    <!-- <Picture
-        src={ src }
-        alt={ alt }
-    /> -->
-    <!-- {
-
-        src &&
-
-        <div class="bg-zinc-200" style=`background-image: url(${ CDN_LINK + src + "?quality=" + IMAGE_QUALITY })` />
-
-    } -->
     {
 
         src &&
 
         <div class="bg-zinc-200 w-full h-auto">
-            <img
-                src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }
+            <Picture
+                src={ src }
                 alt={ alt }
-                class="w-full h-full object-contain"
+                IMAGE_WIDTH="720"
             />
         </div>
 
     }
-    </div>
 </div>
