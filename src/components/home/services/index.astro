@@ -17,7 +17,7 @@ const {
 
 } = Astro.props
 ---
-<section class="py-16" style=`background-image: url(${ CDN_LINK + PROJECT + "/" + data.cover + "?quality=80" })`>
+<section class="py-16 bg-cover" style=`background-image: url(${ CDN_LINK + PROJECT + "/" + data.cover + "?quality=80&width=1200" })`>
     <Container>
         <HeadingTwo>{ data.title }</HeadingTwo>
         <section class="grid md:grid-cols-4 gap-4 pt-4">
