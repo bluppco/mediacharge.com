@@ -1,40 +1,51 @@
 ---
-import { homeAPI } from "../api/home"
+import { homeAPI } from "@/api/home"
 
 const runtime = Astro.locals.runtime
 const data = await homeAPI( runtime.env.ENVIRONMENT )
-const env = runtime.env.ENVIRONMENT
+const CDN_LINK = runtime.env.CDN_LINK
+const PROJECT = runtime.env.PROJECT
 
 const { home_data, services, meta, clients } = data
 
 // IMPORTS LAYOUTS
-import Layout from "../layouts/Layout.astro"
+import Layout from "@/layouts/layout/index.astro"
 
 // IMPORTS COMPONENTS
-import HeaderBanner from "../components/common/header-banner/index.astro"
-import Header from "../components/common/header/index.astro"
-import Hero from "../components/home/hero/index.astro"
-import Services from "../components/home/services/index.astro"
-import Clients from "../components/home/clients/index.astro"
-import About from "../components/home/about/index.astro"
-import WorkWithUs from "../components/home/work-with-us/index.astro"
-import Footer from "../components/common/footer/index.astro"
+import HeaderBanner from "@/components/common/header-banner/index.astro"
+import Header from "@/components/common/header/index.astro"
+import Hero from "@/components/home/hero/index.astro"
+import Services from "@/components/home/services/index.astro"
+import Clients from "@/components/home/clients/index.astro"
+import About from "@/components/home/about/index.astro"
+import WorkWithUs from "@/components/home/work-with-us/index.astro"
+import Footer from "@/components/common/footer/index.astro"
 ---
 <Layout
     title={ meta.title }
     description={ meta.description }
     image={ meta.cover }
+    CDN_LINK={ CDN_LINK }
+    PROJECT={ PROJECT }
 >
     <HeaderBanner />
     <Header />
-    <Hero data={ home_data.hero } />
+    <Hero
+        data={ home_data.hero }
+        CDN_LINK={ CDN_LINK }
+        PROJECT={ PROJECT }
+    />
     <Services
         data={ home_data.services }
         services={ services }
+        CDN_LINK={ CDN_LINK }
+        PROJECT={ PROJECT }
     />
     <Clients
         data={ home_data.clients }
         clients={ clients }
+        CDN_LINK={ CDN_LINK }
+        PROJECT={ PROJECT }
     />
     <About data={ home_data.about } />
     <WorkWithUs data={ home_data.work_with_us } />

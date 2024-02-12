@@ -1,19 +1,23 @@
 ---
 // IMPORTS ASTRO LAYOUTS
-import Container from "../../../layouts/Container.astro"
-
-// IMPORTS CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/image"
+import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
 import ServiceCard from "./card.astro"
 
 // IMPORTS ASTRO ATOMS
-import HeadingTwo from "../../../atoms/heading/two/index.astro"
+import HeadingTwo from "@/atoms/heading/two/index.astro"
 
-const { data, services } = Astro.props
+const {
+
+    data,
+    services,
+    CDN_LINK,
+    PROJECT
+
+} = Astro.props
 ---
-<section class="py-16" style=`background-image: url(${ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY })`>
+<section class="py-16" style=`background-image: url(${ CDN_LINK + PROJECT + "/" + data.cover + "?quality=80" })`>
     <Container>
         <HeadingTwo>{ data.title }</HeadingTwo>
         <section class="grid md:grid-cols-4 gap-4">
@@ -33,6 +37,8 @@ const { data, services } = Astro.props
                                 src={ value.cover }
                                 title={ value.title }
                                 index={ index }
+                                CDN_LINK={ CDN_LINK }
+                                PROJECT={ PROJECT }
                             />
                         </div>
                     )

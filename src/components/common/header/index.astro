@@ -10,18 +10,20 @@ import { getCollection } from "astro:content"
 
 let header_data = await getCollection("header")
 header_data = header_data.sort((a, b) => a.data.order - b.data.order)
+
+const { top_fixed } = Astro.props
 ---
-<header class="h-16 hidden md:flex items-center fixed top-10 z-[100] w-full bg-white">
+<header class={` ${ top_fixed ? "top-0" : "top-10" } h-16 hidden md:flex items-center fixed z-[100] w-full bg-white `}>
     <nav class="flex items-center justify-between h-full w-full container max-w-8xl mx-auto">
         <section class="flex items-center gap-16">
             <div class="w-32 aspect-[3/1]">
-                <a href="/" aria-label="logo">
+                <Link href="/" aria-label="logo">
                     <img
                         src="/logo/header-logo.svg"
                         alt=""
                         class="w-32 aspect-[3/1] object-contain"
                     />
-                </a>
+                </Link>
             </div>
             <div class="flex gap-10 items-center">
                 <ul class="flex gap-6">
@@ -30,7 +32,7 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
                         header_data.map( ( item ) => {
 
                             return (
-                                <li class="font-medium font-graphik text-sm flex items-center gap-1 group cursor-pointer">
+                                <li class="font-graphik_medium text-sm flex items-center gap-1 group cursor-pointer">
                                     <a href={ "/" + item.data.slug } aria-label={"explore " + item.data.title }>{ item.data.title }</a>
                                     {
 

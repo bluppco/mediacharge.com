@@ -1,6 +1,6 @@
 ---
 // IMPORTS ASTRO LAYOUTS
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/layout/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
 import Footer from "@/components/common/footer/index.astro"
@@ -13,7 +13,7 @@ import NotFound from "@/components/common/404/index.astro"
 	image=""
 >
     <section class="md:h-screen md:max-h-screen">
-        <Header />
+        <Header top_fixed={ true } />
         <NotFound />
     </section>
 	<Footer />
