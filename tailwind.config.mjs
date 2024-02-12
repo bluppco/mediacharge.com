@@ -39,7 +39,7 @@ module.exports = {
 			colors: {
 
 				"mc_slate": "#5b626d",
-				"mc_black_": "#222b37",
+				"mc_charcoal_black": "#222b37",
 				"mc_red": "#fd515b",
 				"mc_light_gray": "#f8f9fa",
 				"mc_gray": "#c9c9c9",
@@ -52,7 +52,9 @@ module.exports = {
 
 			fontFamily: {
 
-				"merriweather": ["Merriweather", "serif"]
+				"merriweather": ["Merriweather", "serif"],
+				"graphik_medium": ["Graphik Medium", "sans-serif"],
+				"graphik_bold": ["Graphik Bold", "sans-serif"]
 
 			}
 		},

@@ -1,6 +1,8 @@
 ---
-const { href } = Astro.props
+const { href, aria_label } = Astro.props
 ---
-<a href={ href }>
-    <slot/>
-</a>
+<div>
+    <a href={ href } aria-label={ aria_label }>
+        <slot/>
+    </a>
+</div>
