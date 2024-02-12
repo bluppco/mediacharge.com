@@ -12,8 +12,8 @@ const {
 } = Astro.props
 ---
 <picture class="w-full h-full">
-    <source media="(max-width: 375px)" srcset={ CDN_LINK +  src + "?height=300&quality=80" } />
-    <source media="(max-width: 640px)" srcset={ CDN_LINK +  src + "?height=400&quality=80" } />
+    <source media="(max-width: 375px)" srcset={ CDN_LINK + PROJECT + "/" + src + "?height=300&quality=80" } />
+    <source media="(max-width: 640px)" srcset={ CDN_LINK + PROJECT + "/" + src + "?height=400&quality=80" } />
     <img
         src={ CDN_LINK + PROJECT + "/" +  src + "?quality=80" + "&width=" + IMAGE_WIDTH }
         alt={ alt }
