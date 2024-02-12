@@ -1,0 +1,84 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import FooterTitle from "./title/index.astro"
+import Li from "./li/index.astro"
+import LetsTalk from "../lets-talk/index.astro"
+
+// IMPORTS FOOTER COLLECTION
+import { getCollection } from 'astro:content'
+
+let footer_column_three = await getCollection('footer-column-three')
+footer_column_three = footer_column_three.sort((a, b) => a.data.order - b.data.order)
+footer_column_three = footer_column_three.filter( ( item ) => item.data.live )
+
+let footer_column_four = await getCollection('footer-column-four')
+footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.order)
+footer_column_four = footer_column_four.filter( ( item ) => item.data.live )
+
+import { frontmatter as footerColumnThree } from "@/content/footer-titles/colomn-three-title.md"
+import { frontmatter as footerColumnFour } from "@/content/footer-titles/colomn-four-title.md"
+---
+<footer class="bg-mc_light_gray pt-10 pb-32 md:px-60">
+    <Container>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <section class="flex justify-center">
+                    <img
+                        src="/logo/footer-logo.svg"
+                        alt=""
+                        class="h-5 w-full"
+                    />
+                </section>
+                <section class="flex justify-center col-span-2">
+                    <div class="h-full md:h-80 w-72">
+                        <img
+                            src="/images/awards.png"
+                            alt=""
+                            class="h-full w-full"
+                        />
+                    </div>
+                </section>
+            </section>
+            <section class="grid grid-cols-1 md:grid-cols-2">
+                <section class="flex flex-col gap-6">
+                    <FooterTitle>{ footerColumnThree.title }</FooterTitle>
+                    <ul class="space-y-4">
+                        {
+
+                            footer_column_three.map( ( value ) => {
+
+                                return(
+                                    <Li href={ value.data.link }>{ value.data.title }</Li>
+                                )
+
+                            })
+
+                        }
+
+                    </ul>
+                </section>
+                <section class="flex flex-col items-center md:items-start gap-6 pt-10 md:pt-0">
+                    <FooterTitle>{ footerColumnFour.title }</FooterTitle>
+                    <ul class="space-y-4">
+                        {
+
+                            footer_column_four.map( ( value ) => {
+
+                                return(
+                                    <Li href={ value.data.link }>{ value.data.title }</Li>
+                                )
+
+                            })
+
+                        }
+
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </Container>
+</footer>
+<LetsTalk />

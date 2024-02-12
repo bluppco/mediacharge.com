@@ -1,0 +1,76 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingOneCenter from "@/atoms/heading/one/center/index.astro"
+import ParagraphSmall from "@/atoms/paragraph/small/index.astro"
+import Picture from "@/atoms/picture/index.astro"
+import SecondaryButton from "@/atoms/button/secondary/index.astro"
+
+const {
+
+    data
+
+} = Astro.props
+---
+<Container>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20 py-8 md:py-12 md:mt-16">
+        <div class="flex flex-col gap-4 justify-center">
+            <HeadingOneCenter>{ data.title }</HeadingOneCenter>
+            <div class="hidden md:block">
+                <ParagraphSmall>{ data.description }</ParagraphSmall>
+            </div>
+            <p class="md:hidden text-center text-sm font-graphik_medium text-mc_charcoal_black">"We help brands and businesses to unlock their potential"</p>
+            <div class="flex flex-col md:flex-col-reverse justify-center">
+                <p class="md:hidden text-sm font-graphik_medium text-mc_black text-center">{ data.sub_title }</p>
+                {
+
+                    data.images.map( ( value ) => {
+
+                        return(
+                            <div class="h-12 w-full bg-zinc-200 mt-2 hidden md:block">
+                                <Picture
+                                    src={ value.file }
+                                    alt=""
+                                    IMAGE_WIDTH="720"
+                                />
+                            </div>
+                        )
+
+                    })
+
+                }
+            </div>
+            <div class="hidden md:block mt-2">
+                <SecondaryButton>{ data.button_one_text }</SecondaryButton>
+            </div>
+        </div>
+        <div class="w-full aspect-square bg-zinc-200">
+            <Picture
+                src={ data.cover }
+                alt={ data.title }
+                IMAGE_WIDTH="720"
+            />
+        </div>
+        <div class="md:hidden">
+            <ParagraphSmall>{ data.description }</ParagraphSmall>
+        </div>
+        {
+
+            data.images.map( ( value ) => {
+
+                return(
+                    <div class="h-12 w-full bg-zinc-200 mt-2 md:hidden">
+                        <Picture
+                            src={ value.file }
+                            alt=""
+                        />
+                    </div>
+                )
+
+            })
+
+        }
+    </section>
+</Container>
