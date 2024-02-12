@@ -15,7 +15,7 @@ const { top_fixed } = Astro.props
 ---
 <header class={` ${ top_fixed ? "top-0" : "top-10" } h-16 hidden md:flex items-center fixed z-[100] w-full bg-white `}>
     <nav class="flex items-center justify-between h-full w-full container max-w-8xl mx-auto">
-        <section class="flex items-center gap-16">
+        <section class="flex items-center gap-12">
             <div class="w-32 aspect-[3/1]">
                 <Link href="/" aria-label="logo">
                     <img
@@ -26,13 +26,13 @@ const { top_fixed } = Astro.props
                 </Link>
             </div>
             <div class="flex gap-10 items-center">
-                <ul class="flex gap-6">
+                <ul class="flex">
                     {
 
                         header_data.map( ( item ) => {
 
                             return (
-                                <li class="font-graphik_medium text-sm flex items-center gap-1 group cursor-pointer py-6">
+                                <li class="font-graphik_medium text-sm flex items-center gap-1 group cursor-pointer py-6 px-3">
                                     <a href={ "/" + item.data.slug } aria-label={"explore " + item.data.title }>{ item.data.title }</a>
                                     {
 
@@ -43,7 +43,7 @@ const { top_fixed } = Astro.props
                                                 class="w-5 h-5"
                                                 alt="dropdown menu icon"
                                             />
-                                            <div class="hidden group-hover:block group-hover:flex-col absolute bg-white left-0 z-20 top-16 w-full gap-2">
+                                            <div class="hidden group-hover:block group-hover:flex-col absolute bg-white left-0 z-20 top-16 w-full gap-2 transition-all duration-1000 ease-in">
                                                 {
 
                                                     item.data.slug === "services" &&
