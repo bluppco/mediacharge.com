@@ -13,7 +13,7 @@ import Layout from "@/layouts/layout/index.astro"
 
 // IMPORTS COMPONENTS
 import HeaderBanner from "@/components/common/header-banner/index.astro"
-import Header from "@/components/common/header/index.astro"
+import Header from "@/components/common/header/index.jsx"
 import Hero from "@/components/home/hero/index.astro"
 import Services from "@/components/home/services/index.astro"
 import Clients from "@/components/home/clients/index.astro"
@@ -29,7 +29,7 @@ import Footer from "@/components/common/footer/index.astro"
     PROJECT={ PROJECT }
 >
     <HeaderBanner />
-    <Header />
+    <Header client:load />
     <Hero
         data={ home_data.hero }
         CDN_LINK={ CDN_LINK }

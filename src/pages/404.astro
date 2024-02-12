@@ -4,7 +4,7 @@ import Layout from "@/layouts/layout/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
 import Footer from "@/components/common/footer/index.astro"
-import Header from "@/components/common/header/index.astro"
+import Header from "@/components/common/header/index.jsx"
 import NotFound from "@/components/common/404/index.astro"
 ---
 <Layout
@@ -13,7 +13,10 @@ import NotFound from "@/components/common/404/index.astro"
 	image=""
 >
     <section class="md:h-screen md:max-h-screen">
-        <Header top_fixed={ true } />
+        <Header
+            client:load
+            top_fixed={ true }
+        />
         <NotFound />
     </section>
 	<Footer />
