@@ -52,7 +52,9 @@ module.exports = {
 
 			fontFamily: {
 
-				"merriweather": ["Merriweather", "serif"]
+				"merriweather": ["Merriweather", "serif"],
+				"graphik_medium": ["Graphik Medium", "sans-serif"],
+				"graphik_bold": ["Graphik Bold", "sans-serif"]
 
 			}
 		},
