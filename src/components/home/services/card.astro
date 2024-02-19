@@ -16,7 +16,7 @@ const {
     index,
     src,
     title,
-    CDN_LINK,
+    CDN,
     PROJECT
 
 } = Astro.props
@@ -32,7 +32,7 @@ const {
                         return(
                             <div class="size-6">
                                 <img
-                                    src={ CDN_LINK + PROJECT + "/" + value.file + "?quality=80" }
+                                    src={ CDN + PROJECT + "/" + value.file + "?quality=80" }
                                     alt={ icon_alt }
                                     class="size-6"
                                 />

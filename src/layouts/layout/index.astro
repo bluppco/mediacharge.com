@@ -8,7 +8,7 @@ const {
     description,
     image,
     title,
-    CDN_LINK,
+    CDN,
     PROJECT
 
 } = Astro.props
@@ -28,13 +28,13 @@ const {
         <meta property="og:url" content="" />
         <meta property="og:title" content={ title } />
         <meta property="og:description" content={ description } />
-        <meta property="og:image" content={ CDN_LINK + PROJECT + "/" + image } />
+        <meta property="og:image" content={ CDN + PROJECT + "/" + image } />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="" />
         <meta property="twitter:title" content={ title } />
         <meta property="twitter:description" content={ description } />
-        <meta property="twitter:image" content={ CDN_LINK + PROJECT + "/" + image } />
-        <meta property="twitter:image" content={ CDN_LINK + PROJECT + "/" + image } />
+        <meta property="twitter:image" content={ CDN + PROJECT + "/" + image } />
+        <meta property="twitter:image" content={ CDN + PROJECT + "/" + image } />
         <meta property="article:publisher" content="" />
         <link rel="icon" href="/mc-favicon.png"/>
     </head>

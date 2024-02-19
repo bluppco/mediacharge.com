@@ -12,12 +12,12 @@ const {
 
     data,
     services,
-    CDN_LINK,
+    CDN,
     PROJECT
 
 } = Astro.props
 ---
-<section class="py-16 bg-cover" style=`background-image: url(${ CDN_LINK + PROJECT + "/" + data.cover + "?quality=80&width=1200" })`>
+<section class="py-16 bg-cover" style=`background-image: url(${ CDN + PROJECT + "/" + data.cover + "?quality=80&width=1200" })`>
     <Container>
         <HeadingTwo>{ data.title }</HeadingTwo>
         <section class="grid md:grid-cols-4 gap-4 pt-4">
@@ -37,7 +37,7 @@ const {
                                 src={ value.cover }
                                 title={ value.title }
                                 index={ index }
-                                CDN_LINK={ CDN_LINK }
+                                CDN={ CDN }
                                 PROJECT={ PROJECT }
                             />
                         </div>
