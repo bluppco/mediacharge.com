@@ -3,17 +3,17 @@
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import ServiceCard from "./card.astro"
+import ServiceCard from "@/components/home/services/card/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import HeadingTwo from "@/atoms/heading/two/index.astro"
 
 const {
 
-    data,
-    services,
     CDN,
-    PROJECT
+    data,
+    PROJECT,
+    services
 
 } = Astro.props
 ---

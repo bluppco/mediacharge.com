@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 
 // IMPORTS COMPONENTS
-import Li from "./li/index"
+import Li from "@/components/common/header/mobile-header/li/index.jsx"
 
 // IMPORTS ATOMS
 import Link from "@/atoms/link/jsx/index.jsx"

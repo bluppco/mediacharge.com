@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 
 // IMPORTS COMPONENTS
-import HeaderMobile from "./mobile-header/index.jsx"
+import HeaderMobile from "@/components/common/header/mobile-header/index.jsx"
 
 // IMPORTS ATOMS
 import SecondaryButton from "@/atoms/button/primary/jsx/index.jsx"
