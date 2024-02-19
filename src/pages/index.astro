@@ -5,10 +5,11 @@ const {
 
     CDN,
     ENDPOINT,
+    ENVIRONMENT,
     PROJECT
 
 } = runtime.env
-const data = await homeAPI( runtime.env.ENVIRONMENT, ENDPOINT )
+const data = await homeAPI( ENVIRONMENT, ENDPOINT )
 
 import { homeAPI } from "@/api/home"
 
@@ -30,7 +31,7 @@ import Footer from "@/components/common/footer/index.astro"
     CDN={ CDN }
     PROJECT={ PROJECT }
 >
-    <HeaderBanner />
+    <HeaderBanner env={ ENVIRONMENT } />
     <Header client:load />
     <Home
         CDN={ CDN }
