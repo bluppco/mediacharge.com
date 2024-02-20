@@ -1,4 +1,5 @@
 ---
+
 // IMPORTS ASTRO ATOMS
 import ArrowButton from "@/atoms/button/arrow/index.astro"
 import HeadingThree from "@/atoms/heading/three/index.astro"
@@ -6,6 +7,7 @@ import Link from "@/atoms/link/index.astro"
 import Picture from "@/atoms/picture/index.astro"
 import SmallParagraph from "@/atoms/paragraph/small/index.astro"
 
+// ASTRO PROPS
 const {
 
     alternative_text,
@@ -21,6 +23,7 @@ const {
     title
 
 } = Astro.props
+
 ---
 <div class={` ${ source ? "md:grid-cols-2 h-full" : "md:grid-cols-1 h-full" } grid rounded-lg border border-[#e0e6e8] bg-white overflow-hidden`}>
     <div class={` ${ source ? "justify-center" : "justify-between" } flex flex-col gap-6 p-4`}>
@@ -48,7 +51,7 @@ const {
             </div>
             <SmallParagraph>{ description }</SmallParagraph>
         </div>
-        <Link href={ button_link } aria_label="">
+        <Link href={ button_link } aria_label={ button_text }>
             <ArrowButton>{ button_text }</ArrowButton>
         </Link>
     </div>

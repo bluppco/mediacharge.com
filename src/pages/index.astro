@@ -1,4 +1,5 @@
 ---
+
 // RUNTIME
 const runtime = Astro.locals.runtime
 const {
@@ -19,10 +20,8 @@ const { home_data, services, meta, clients } = data
 import Layout from "@/layouts/layout/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import Footer from "@/components/common/footer/index.astro"
-import Header from "@/components/common/header/jsx/index.jsx"
-import HeaderBanner from "@/components/common/header-banner/index.astro"
 import Home from "@/components/home/index.astro"
+
 ---
 <Layout
     title={ meta.title }
@@ -31,14 +30,12 @@ import Home from "@/components/home/index.astro"
     CDN={ CDN }
     PROJECT={ PROJECT }
 >
-    <HeaderBanner env={ ENVIRONMENT } />
-    <Header />
     <Home
         CDN={ CDN }
         clients={ clients }
+        ENVIRONMENT={ ENVIRONMENT }
         home_data={ home_data }
         PROJECT={ PROJECT }
         services={ services }
     />
-    <Footer />
 </Layout>

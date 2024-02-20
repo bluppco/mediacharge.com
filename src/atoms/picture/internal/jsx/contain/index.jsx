@@ -1,5 +1,6 @@
 const PictureInternalContain = ( props ) => {
 
+    // PROPS
     const {
 
         alternative_text,

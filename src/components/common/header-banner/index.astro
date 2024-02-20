@@ -1,12 +1,14 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
-const { env } = Astro.props
+const { ENVIRONMENT } = Astro.props
+
 ---
 {
 
-    env === "staging" &&
+    ENVIRONMENT === "staging" &&
     <section class="md:fixed z-50 top-0 w-full bg-gradient-to-r from-violet-200 to-pink-200 h-16 md:h-10">
         <Container>
             <div class="flex items-center justify-center h-full">

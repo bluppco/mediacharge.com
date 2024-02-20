@@ -1,12 +1,16 @@
+// IMPORTS ATOMS
+import Link from "@/atoms/link/jsx/index.jsx"
+
 const ListItem = ( props ) => {
 
+    // PROPS
     const { href, aria_label } = props
 
     return(
         <li className="uppercase font-graphik tracking-wider">
-            <a href={ href } aria_label={ aria_label }>
+            <Link href={ href } aria_label={ aria_label }>
                 { props.children }
-            </a>
+            </Link>
         </li>
     )
 

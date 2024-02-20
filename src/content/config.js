@@ -28,6 +28,6 @@ const footerColumnFourCollection = defineCollection({
 export const collections = {
 
 	"footer-column-three": footerColumnThreeCollection,
-	"footer-column-four": footerColumnFourCollection,
+	"footer-column-four": footerColumnFourCollection
 
 }

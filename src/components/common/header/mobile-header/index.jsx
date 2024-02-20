@@ -18,10 +18,10 @@ const HeaderMobile = ( props ) => {
     return (
         <header className="md:hidden bg-white px-4 z-[100] py-4 border-b border-gray-100">
             <div className="flex justify-between items-center relative">
-                <Link href="/" aria_label="">
+                <Link href="/" aria_label="header logo">
                     <div className="w-24 aspect-[5/2]">
                         <PictureInternalContain
-                            alternative_text=""
+                            alternative_text="header logo"
                             source="/logo/header-logo.svg"
                         />
                     </div>
@@ -37,7 +37,7 @@ const HeaderMobile = ( props ) => {
                             isOpen &&
                             <div className="w-6 aspect-square">
                                 <PictureInternalContain
-                                    alternative_text=""
+                                    alternative_text="close icon"
                                     source="/icons/close.svg"
                                 />
                             </div>
@@ -48,7 +48,7 @@ const HeaderMobile = ( props ) => {
                             !isOpen &&
                             <div className="w-5 aspect-square">
                                 <PictureInternalContain
-                                    alternative_text=""
+                                    alternative_text="menu icon"
                                     source="/icons/menu.svg"
                                 />
                             </div>

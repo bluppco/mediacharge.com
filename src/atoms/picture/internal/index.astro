@@ -1,10 +1,13 @@
 ---
+
+// ASTRO PROPS
 const {
 
     alternative_text,
     source
 
 } = Astro.props
+
 ---
 <picture class="w-full h-full">
     <source media="(max-width: 375px)" srcset={ source + "?height=300&quality=80" } />

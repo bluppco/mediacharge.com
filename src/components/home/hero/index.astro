@@ -1,4 +1,5 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
@@ -8,6 +9,7 @@ import ParagraphSmall from "@/atoms/paragraph/small/index.astro"
 import Picture from "@/atoms/picture/index.astro"
 import SecondaryButton from "@/atoms/button/secondary/index.astro"
 
+
 const {
 
     CDN,
@@ -15,6 +17,7 @@ const {
     PROJECT
 
 } = Astro.props
+
 ---
 <Container>
     <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20 py-8 md:py-12 2xl:py-20 md:mt-16">
@@ -23,28 +26,18 @@ const {
             <div class="hidden md:block">
                 <ParagraphSmall>{ data.description }</ParagraphSmall>
             </div>
-            <p class="md:hidden text-center text-sm font-graphik_medium text-mc_charcoal_black">"We help brands and businesses to unlock their potential"</p>
+            <p class="md:hidden text-center text-sm font-graphik_medium text-mc_charcoal_black">{ data.mobile_description }</p>
             <div class="flex flex-col md:flex-col-reverse justify-center">
                 <p class="md:hidden text-sm font-graphik_medium text-mc_black text-center">{ data.sub_title }</p>
-                {
-
-                    data.images.map( ( value ) => {
-
-                        return(
-                            <div class="h-12 w-full bg-zinc-200 mt-2 hidden md:block">
-                                <Picture
-                                    alternative_text=""
-                                    CDN={ CDN }
-                                    image_width="720"
-                                    PROJECT={ PROJECT }
-                                    source={ value.file }
-                                />
-                            </div>
-                        )
-
-                    })
-
-                }
+                <div class="h-12 w-full bg-zinc-200 mt-2 hidden md:block">
+                    <Picture
+                        alternative_text="mediacharge clients"
+                        CDN={ CDN }
+                        image_width="720"
+                        PROJECT={ PROJECT }
+                        source={ data.images[0].file }
+                    />
+                </div>
             </div>
             <div class="hidden md:block mt-2">
                 <SecondaryButton>{ data.button_one_text }</SecondaryButton>
@@ -62,21 +55,14 @@ const {
         <div class="md:hidden">
             <ParagraphSmall>{ data.description }</ParagraphSmall>
         </div>
-        {
-
-            data.images.map( ( value ) => {
-
-                return(
-                    <div class="h-12 w-full bg-zinc-200 mt-2 md:hidden">
-                        <Picture
-                            alternative_text=""
-                            source={ value.file }
-                        />
-                    </div>
-                )
-
-            })
-
-        }
+        <div class="h-12 w-full bg-zinc-200 mt-2 md:hidden">
+            <Picture
+                alternative_text="mediacharge clients"
+                CDN={ CDN }
+                image_width="720"
+                PROJECT={ PROJECT }
+                source={ data.images[0].file }
+            />
+        </div>
     </section>
 </Container>
