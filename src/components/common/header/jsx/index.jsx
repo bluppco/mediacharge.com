@@ -41,14 +41,14 @@ const Header = ( props ) => {
             <header className={` ${ top_fixed ? "top-0" : "top-10" } ${ isScrolled ? "shadow-2xl border-b border-gray-50" : "" } h-16 hidden md:flex items-center fixed z-[100] w-full bg-white `}>
                 <nav className="flex items-center justify-between h-full w-full container max-w-8xl mx-auto">
                     <section className="flex items-center gap-12">
-                        <div className="w-32 aspect-[3/1]">
-                            <Link href="/" aria-label="logo">
+                        <Link href="/" aria-label="logo">
+                            <div className="w-32 aspect-[3/1]">
                                 <PictureInternalContain
                                     alternative_text=""
                                     source="/logo/header-logo.svg"
                                 />
-                            </Link>
-                        </div>
+                            </div>
+                        </Link>
                         <div className="flex gap-10 items-center">
                             <ul className="flex">
                                 {
