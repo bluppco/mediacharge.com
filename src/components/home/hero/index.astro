@@ -3,14 +3,16 @@
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
-import HeadingOneCenter from "@/atoms/heading/one/center/index.astro"
+import HeadingOneCenter from "@/atoms/heading/one/mobile-center/index.astro"
 import ParagraphSmall from "@/atoms/paragraph/small/index.astro"
 import Picture from "@/atoms/picture/index.astro"
 import SecondaryButton from "@/atoms/button/secondary/index.astro"
 
 const {
 
-    data
+    CDN,
+    data,
+    PROJECT
 
 } = Astro.props
 ---
@@ -31,9 +33,11 @@ const {
                         return(
                             <div class="h-12 w-full bg-zinc-200 mt-2 hidden md:block">
                                 <Picture
-                                    src={ value.file }
                                     alt=""
-                                    IMAGE_WIDTH="720"
+                                    CDN={ CDN }
+                                    image_width="720"
+                                    PROJECT={ PROJECT }
+                                    src={ value.file }
                                 />
                             </div>
                         )
@@ -48,9 +52,11 @@ const {
         </div>
         <div class="w-full aspect-square bg-zinc-200">
             <Picture
-                src={ data.cover }
                 alt={ data.title }
-                IMAGE_WIDTH="720"
+                CDN={ CDN }
+                image_width="720"
+                PROJECT={ PROJECT }
+                src={ data.cover }
             />
         </div>
         <div class="md:hidden">
@@ -63,8 +69,8 @@ const {
                 return(
                     <div class="h-12 w-full bg-zinc-200 mt-2 md:hidden">
                         <Picture
-                            src={ value.file }
                             alt=""
+                            src={ value.file }
                         />
                     </div>
                 )

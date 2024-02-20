@@ -1,12 +1,14 @@
-// IMPORTS REACT
-import { useState, useEffect } from "react"
-
 // IMPORTS COMPONENTS
 import HeaderMobile from "@/components/common/header/mobile-header/index.jsx"
 
 // IMPORTS ATOMS
 import SecondaryButton from "@/atoms/button/primary/jsx/index.jsx"
 import Link from "@/atoms/link/jsx/index.jsx"
+import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
+import PictureInternal from "@/atoms/picture/internal/jsx/index.jsx"
+
+// IMPORTS REACT
+import { useState, useEffect } from "react"
 
 // IMPORTS HEADER COLLECTION
 import { getCollection } from "astro:content"
@@ -41,10 +43,9 @@ const Header = ( props ) => {
                     <section className="flex items-center gap-12">
                         <div className="w-32 aspect-[3/1]">
                             <Link href="/" aria-label="logo">
-                                <img
-                                    src="/logo/header-logo.svg"
+                                <PictureInternalContain
                                     alt=""
-                                    className="w-32 aspect-[3/1] object-contain"
+                                    src="/logo/header-logo.svg"
                                 />
                             </Link>
                         </div>
@@ -61,11 +62,12 @@ const Header = ( props ) => {
 
                                                     item.data.has_dropdown &&
                                                     <div>
-                                                        <img
-                                                            src="/icons/dropdown.svg"
-                                                            className="w-5 h-5"
-                                                            alt="dropdown menu icon"
-                                                        />
+                                                        <div className="w-5 aspect-square">
+                                                            <PictureInternalContain
+                                                                alt="dropdown menu icon"
+                                                                src="/icons/dropdown.svg"
+                                                            />
+                                                        </div>
                                                         <div className="hidden group-hover:block group-hover:flex-col absolute bg-white left-0 z-20 top-16 w-full gap-2 transition-all duration-1000 ease-in">
                                                             {
 
@@ -81,11 +83,10 @@ const Header = ( props ) => {
                                                                                 <Link href={ "/" + item.data.slug + "/" + sub_item.slug } aria_label={ "explore" + sub_item.title }>
                                                                                     <div className="space-y-4">
                                                                                         <div className="flex gap-4">
-                                                                                            <div>
-                                                                                                <img
-                                                                                                    src={ "/icons/" + sub_item.src }
-                                                                                                    className="w-6 h-6"
+                                                                                            <div className="w-6 aspect-square">
+                                                                                                <PictureInternalContain
                                                                                                     alt=""
+                                                                                                    src={ "/icons/" + sub_item.src }
                                                                                                 />
                                                                                             </div>
                                                                                             <p className="font-graphik_medium capitalize tracking-wide">{ sub_item.title }</p>
@@ -118,11 +119,10 @@ const Header = ( props ) => {
                                                                                         <div key={ sub_item_index } className="p-2 rounded hover:bg-zinc-50">
                                                                                             <Link href={ "/" + item.data.slug + "/" + sub_item.slug } aria_label={ "explore" + sub_item.title }>
                                                                                                 <div className="flex gap-4">
-                                                                                                    <div>
-                                                                                                        <img
-                                                                                                            src={ "/icons/" + sub_item.src }
-                                                                                                            className="w-6 h-6"
+                                                                                                    <div className="w-6 aspect-square">
+                                                                                                        <PictureInternalContain
                                                                                                             alt=""
+                                                                                                            src={ "/icons/" + sub_item.src }
                                                                                                         />
                                                                                                     </div>
                                                                                                     <p className="text-sm font-graphik_medium capitalize tracking-wide">{ sub_item.title }</p>
@@ -142,10 +142,9 @@ const Header = ( props ) => {
                                                                             <Link href="/publications/navigating-financial-prudence-a-new-lens-for-marketing-strategies" aria_label="explore financial prudence">
                                                                                 <div className="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6">
                                                                                     <div className="w-full h-full bg-zinc-200">
-                                                                                        <img
-                                                                                            src="/images/financial-prudence.png"
+                                                                                        <PictureInternal
                                                                                             alt=""
-                                                                                            className="w-full h-full object-cover"
+                                                                                            src="/images/financial-prudence.png"
                                                                                         />
                                                                                     </div>
                                                                                     <div className="col-span-2 space-y-2">
@@ -157,10 +156,9 @@ const Header = ( props ) => {
                                                                             <Link href="/publications/chatgpt-market-share" aria_label="explore chatgpt">
                                                                                 <div className="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6 mt-3">
                                                                                     <div className="w-full h-full bg-zinc-200">
-                                                                                        <img
-                                                                                            src="/images/chatgpt.jpg"
+                                                                                        <PictureInternal
                                                                                             alt=""
-                                                                                            className="w-full h-full object-cover"
+                                                                                            src="/images/chatgpt.jpg"
                                                                                         />
                                                                                     </div>
                                                                                     <div className="col-span-2 space-y-2">
@@ -175,7 +173,7 @@ const Header = ( props ) => {
 
                                                             }
                                                             <div className="bg-mc_light_pink py-6">
-                                                                <Link href="/career">
+                                                                <Link href="/career" aria_label="">
                                                                     <p className="text-mc_orange font-graphik text-center text-sm">Looking for a new career? Get in touch</p>
                                                                 </Link>
                                                             </div>

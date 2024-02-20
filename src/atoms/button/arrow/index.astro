@@ -1,8 +1,13 @@
+---
+// IMPORTS ASTRO ATOMS
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+---
 <button class="flex items-center gap-2 text-xs md:text-sm font-graphik">
     <slot/>
-    <img
-        src="/icons/top-right-arrow.svg"
-        alt=""
-        class="size-4"
-    />
+    <div class="size-4">
+        <PictureInternalContain
+            alt=""
+            src="/icons/top-right-arrow.svg"
+        />
+    </div>
 </button>

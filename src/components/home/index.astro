@@ -17,18 +17,20 @@ const {
 } = Astro.props
 ---
 <Hero
-    data={ home_data.hero }
-/>
-<Services
-    data={ home_data.services }
-    services={ services }
     CDN={ CDN }
+    data={ home_data.hero }
     PROJECT={ PROJECT }
 />
-<Clients
-    data={ home_data.clients }
-    clients={ clients }
+<Services
     CDN={ CDN }
+    data={ home_data.services }
+    PROJECT={ PROJECT }
+    services={ services }
+/>
+<Clients
+    CDN={ CDN }
+    clients={ clients }
+    data={ home_data.clients }
     PROJECT={ PROJECT }
 />
 <About data={ home_data.about } />

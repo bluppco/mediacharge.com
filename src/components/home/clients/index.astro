@@ -8,9 +8,9 @@ import ContainPicture from "@/atoms/picture/contain/index.astro"
 
 const {
 
-    data,
-    clients,
     CDN,
+    clients,
+    data,
     PROJECT
 
 } = Astro.props
@@ -27,9 +27,11 @@ const {
                         <div class="flex flex-col items-center gap-2">
                             <div class="h-20 w-full">
                                 <ContainPicture
+                                    alt={ data.title }
+                                    CDN={ CDN }
+                                    image_width="200"
+                                    PROJECT={ PROJECT }
                                     src={ value.cover }
-                                    alt=""
-                                    IMAGE_WIDTH="200"
                                 />
                             </div>
                             <p class="text-white text-sm text-center">{ value.tag }</p>
