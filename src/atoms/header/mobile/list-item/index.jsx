@@ -1,10 +1,10 @@
-const Li = ( props ) => {
+const ListItem = ( props ) => {
 
-    const { href } = props
+    const { href, aria_label } = props
 
     return(
         <li className="uppercase font-graphik tracking-wider">
-            <a href={ href }>
+            <a href={ href } aria_label={ aria_label }>
                 { props.children }
             </a>
         </li>
@@ -12,4 +12,4 @@ const Li = ( props ) => {
 
 }
 
-export default Li
+export default ListItem

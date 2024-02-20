@@ -4,13 +4,13 @@ import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import HeadingTwoWhiteCenter from "@/atoms/heading/two/white/center/index.astro"
-import ContainPicture from "@/atoms/picture/contain/index.astro"
+import PictureContain from "@/atoms/picture/contain/index.astro"
 
 const {
 
-    data,
+    CDN,
     clients,
-    CDN_LINK,
+    data,
     PROJECT
 
 } = Astro.props
@@ -26,10 +26,12 @@ const {
                     return(
                         <div class="flex flex-col items-center gap-2">
                             <div class="h-20 w-full">
-                                <ContainPicture
-                                    src={ value.cover }
-                                    alt=""
-                                    IMAGE_WIDTH="200"
+                                <PictureContain
+                                    alternative_text={ data.title }
+                                    CDN={ CDN }
+                                    image_width="200"
+                                    PROJECT={ PROJECT }
+                                    source={ value.cover }
                                 />
                             </div>
                             <p class="text-white text-sm text-center">{ value.tag }</p>

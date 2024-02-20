@@ -1,0 +1,70 @@
+---
+// IMPORTS ASTRO ATOMS
+import ArrowButton from "@/atoms/button/arrow/index.astro"
+import HeadingThree from "@/atoms/heading/three/index.astro"
+import Link from "@/atoms/link/index.astro"
+import Picture from "@/atoms/picture/index.astro"
+import SmallParagraph from "@/atoms/paragraph/small/index.astro"
+
+const {
+
+    alternative_text,
+    button_link,
+    button_text,
+    CDN,
+    description,
+    icon_alternative_text,
+    icon_source,
+    index,
+    PROJECT,
+    source,
+    title
+
+} = Astro.props
+---
+<div class={` ${ source ? "md:grid-cols-2 h-full" : "md:grid-cols-1 h-full" } grid rounded-lg border border-[#e0e6e8] bg-white overflow-hidden`}>
+    <div class={` ${ source ? "justify-center" : "justify-between" } flex flex-col gap-6 p-4`}>
+        <div class="flex flex-col gap-6">
+            <div class="flex items-center gap-2">
+                {
+
+                    icon_source.map( ( value ) => {
+
+                        return(
+                            <div class="size-6">
+                                <Picture
+                                    alternative_text={ icon_alternative_text }
+                                    CDN={ CDN }
+                                    PROJECT={ PROJECT }
+                                    source={ value.file }
+                                />
+                            </div>
+                        )
+
+                    })
+
+                }
+                <HeadingThree>{ title }</HeadingThree>
+            </div>
+            <SmallParagraph>{ description }</SmallParagraph>
+        </div>
+        <Link href={ button_link } aria_label="">
+            <ArrowButton>{ button_text }</ArrowButton>
+        </Link>
+    </div>
+    {
+
+        source &&
+
+        <div class="bg-zinc-200 w-full h-auto">
+            <Picture
+                alternative_text={ alternative_text }
+                CDN={ CDN }
+                image_width="720"
+                PROJECT={ PROJECT }
+                source={ source }
+            />
+        </div>
+
+    }
+</div>

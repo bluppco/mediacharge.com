@@ -1,22 +1,20 @@
 ---
-const runtime = Astro.locals.runtime
-const CDN_LINK = runtime.env.CDN_LINK
-const PROJECT = runtime.env.PROJECT
-
 const {
 
-    alt,
-    src,
-    IMAGE_WIDTH
+    alternative_text,
+    CDN,
+    image_width,
+    PROJECT,
+    source
 
 } = Astro.props
 ---
 <picture class="w-full h-full">
-    <source media="(max-width: 375px)" srcset={ CDN_LINK + PROJECT + "/" + src + "?height=300&quality=80" } />
-    <source media="(max-width: 640px)" srcset={ CDN_LINK + PROJECT + "/" + src + "?height=400&quality=80" } />
+    <source media="(max-width: 375px)" srcset={ CDN + PROJECT + "/" + source + "?height=300&quality=80" } />
+    <source media="(max-width: 640px)" srcset={ CDN + PROJECT + "/" + source + "?height=400&quality=80" } />
     <img
-        src={ CDN_LINK + PROJECT + "/" +  src + "?quality=80" + "&width=" + IMAGE_WIDTH }
-        alt={ alt }
+        src={ CDN + PROJECT + "/" +  source + "?quality=80" + "&width=" + image_width }
+        alt={ alternative_text }
         class="w-full h-full object-cover"
     />
 </picture>
