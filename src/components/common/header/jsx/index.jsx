@@ -44,8 +44,8 @@ const Header = ( props ) => {
                         <div className="w-32 aspect-[3/1]">
                             <Link href="/" aria-label="logo">
                                 <PictureInternalContain
-                                    alt=""
-                                    src="/logo/header-logo.svg"
+                                    alternative_text=""
+                                    source="/logo/header-logo.svg"
                                 />
                             </Link>
                         </div>
@@ -64,8 +64,8 @@ const Header = ( props ) => {
                                                     <div>
                                                         <div className="w-5 aspect-square">
                                                             <PictureInternalContain
-                                                                alt="dropdown menu icon"
-                                                                src="/icons/dropdown.svg"
+                                                                alternative_text="dropdown menu icon"
+                                                                source="/icons/dropdown.svg"
                                                             />
                                                         </div>
                                                         <div className="hidden group-hover:block group-hover:flex-col absolute bg-white left-0 z-20 top-16 w-full gap-2 transition-all duration-1000 ease-in">
@@ -85,8 +85,8 @@ const Header = ( props ) => {
                                                                                         <div className="flex gap-4">
                                                                                             <div className="w-6 aspect-square">
                                                                                                 <PictureInternalContain
-                                                                                                    alt=""
-                                                                                                    src={ "/icons/" + sub_item.src }
+                                                                                                    alternative_text=""
+                                                                                                    source={ "/icons/" + sub_item.src }
                                                                                                 />
                                                                                             </div>
                                                                                             <p className="font-graphik_medium capitalize tracking-wide">{ sub_item.title }</p>
@@ -121,8 +121,8 @@ const Header = ( props ) => {
                                                                                                 <div className="flex gap-4">
                                                                                                     <div className="w-6 aspect-square">
                                                                                                         <PictureInternalContain
-                                                                                                            alt=""
-                                                                                                            src={ "/icons/" + sub_item.src }
+                                                                                                            alternative_text=""
+                                                                                                            source={ "/icons/" + sub_item.src }
                                                                                                         />
                                                                                                     </div>
                                                                                                     <p className="text-sm font-graphik_medium capitalize tracking-wide">{ sub_item.title }</p>
@@ -143,8 +143,8 @@ const Header = ( props ) => {
                                                                                 <div className="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6">
                                                                                     <div className="w-full h-full bg-zinc-200">
                                                                                         <PictureInternal
-                                                                                            alt=""
-                                                                                            src="/images/financial-prudence.png"
+                                                                                            alternative_text=""
+                                                                                            source="/images/financial-prudence.png"
                                                                                         />
                                                                                     </div>
                                                                                     <div className="col-span-2 space-y-2">
@@ -157,8 +157,8 @@ const Header = ( props ) => {
                                                                                 <div className="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6 mt-3">
                                                                                     <div className="w-full h-full bg-zinc-200">
                                                                                         <PictureInternal
-                                                                                            alt=""
-                                                                                            src="/images/chatgpt.jpg"
+                                                                                            alternative_text=""
+                                                                                            source="/images/chatgpt.jpg"
                                                                                         />
                                                                                     </div>
                                                                                     <div className="col-span-2 space-y-2">

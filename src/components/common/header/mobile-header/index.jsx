@@ -21,8 +21,8 @@ const HeaderMobile = ( props ) => {
                 <Link href="/" aria_label="">
                     <div className="w-24 aspect-[5/2]">
                         <PictureInternalContain
-                            alt=""
-                            src="/logo/header-logo.svg"
+                            alternative_text=""
+                            source="/logo/header-logo.svg"
                         />
                     </div>
                 </Link>
@@ -37,8 +37,8 @@ const HeaderMobile = ( props ) => {
                             isOpen &&
                             <div className="w-6 aspect-square">
                                 <PictureInternalContain
-                                    alt=""
-                                    src="/icons/close.svg"
+                                    alternative_text=""
+                                    source="/icons/close.svg"
                                 />
                             </div>
 
@@ -48,8 +48,8 @@ const HeaderMobile = ( props ) => {
                             !isOpen &&
                             <div className="w-5 aspect-square">
                                 <PictureInternalContain
-                                    alt=""
-                                    src="/icons/menu.svg"
+                                    alternative_text=""
+                                    source="/icons/menu.svg"
                                 />
                             </div>
 

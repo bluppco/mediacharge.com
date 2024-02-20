@@ -28,16 +28,16 @@ const {
                     return(
                         <div class={` ${ index < 2 ? "md:col-span-2" : "" } ${ index === 2 ? "md:col-span-4" : "" } `}>
                             <ServiceCard
-                                alt={ value.title }
+                                alternative_text={ value.title }
                                 button_link={ value.button_link }
                                 button_text={ value.button_text }
                                 CDN={ CDN }
                                 description={ value.description }
-                                icon_alt={ value.title }
-                                icon_src={ value.icon_image }
+                                icon_alternative_text={ value.title }
+                                icon_source={ value.icon_image }
                                 index={ index }
                                 PROJECT={ PROJECT }
-                                src={ value.cover }
+                                source={ value.cover }
                                 title={ value.title }
                             />
                         </div>

@@ -8,35 +8,35 @@ import SmallParagraph from "@/atoms/paragraph/small/index.astro"
 
 const {
 
-    alt,
+    alternative_text,
     button_link,
     button_text,
     CDN,
     description,
-    icon_alt,
-    icon_src,
+    icon_alternative_text,
+    icon_source,
     index,
     PROJECT,
-    src,
+    source,
     title
 
 } = Astro.props
 ---
-<div class={` ${ src ? "md:grid-cols-2 h-full" : "md:grid-cols-1 h-full" } grid rounded-lg border border-[#e0e6e8] bg-white overflow-hidden`}>
-    <div class={` ${ src ? "justify-center" : "justify-between" } flex flex-col gap-6 p-4`}>
+<div class={` ${ source ? "md:grid-cols-2 h-full" : "md:grid-cols-1 h-full" } grid rounded-lg border border-[#e0e6e8] bg-white overflow-hidden`}>
+    <div class={` ${ source ? "justify-center" : "justify-between" } flex flex-col gap-6 p-4`}>
         <div class="flex flex-col gap-6">
             <div class="flex items-center gap-2">
                 {
 
-                    icon_src.map( ( value ) => {
+                    icon_source.map( ( value ) => {
 
                         return(
                             <div class="size-6">
                                 <Picture
-                                    alt={ icon_alt }
+                                    alternative_text={ icon_alternative_text }
                                     CDN={ CDN }
                                     PROJECT={ PROJECT }
-                                    src={ value.file }
+                                    source={ value.file }
                                 />
                             </div>
                         )
@@ -54,15 +54,15 @@ const {
     </div>
     {
 
-        src &&
+        source &&
 
         <div class="bg-zinc-200 w-full h-auto">
             <Picture
-                alt={ alt }
+                alternative_text={ alternative_text }
                 CDN={ CDN }
                 image_width="720"
                 PROJECT={ PROJECT }
-                src={ src }
+                source={ source }
             />
         </div>
 
