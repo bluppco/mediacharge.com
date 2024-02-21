@@ -1,4 +1,5 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
@@ -6,6 +7,7 @@ import Container from "@/layouts/container/index.astro"
 import HeadingTwoWhiteCenter from "@/atoms/heading/two/white/center/index.astro"
 import PictureContain from "@/atoms/picture/contain/index.astro"
 
+// ASTRO PROPS
 const {
 
     CDN,
@@ -14,8 +16,9 @@ const {
     PROJECT
 
 } = Astro.props
+
 ---
-<section class="bg-mc_black py-10 md:px-60">
+<section class="bg-mc_black py-10 2xl:py-20 md:px-60">
     <Container>
         <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
         <section class="grid md:grid-cols-4 gap-x-4 gap-y-4 md:gap-y-10">

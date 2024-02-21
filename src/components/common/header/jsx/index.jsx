@@ -2,10 +2,10 @@
 import HeaderMobile from "@/components/common/header/mobile-header/index.jsx"
 
 // IMPORTS ATOMS
-import SecondaryButton from "@/atoms/button/primary/jsx/index.jsx"
 import Link from "@/atoms/link/jsx/index.jsx"
-import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
 import PictureInternal from "@/atoms/picture/internal/jsx/index.jsx"
+import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
+import SecondaryButton from "@/atoms/button/primary/jsx/index.jsx"
 
 // IMPORTS REACT
 import { useState, useEffect } from "react"
@@ -17,8 +17,6 @@ let header_data = await getCollection("header")
 header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 
 const Header = ( props ) => {
-
-    const { top_fixed } = props
 
     const [ isScrolled, setIsScrolled ] = useState( false )
 
@@ -38,17 +36,17 @@ const Header = ( props ) => {
 
     return(
         <>
-            <header className={` ${ top_fixed ? "top-0" : "top-10" } ${ isScrolled ? "shadow-2xl border-b border-gray-50" : "" } h-16 hidden md:flex items-center fixed z-[100] w-full bg-white `}>
+            <header className={` ${ isScrolled ? "shadow-2xl border-b border-gray-50" : "" } h-16 hidden md:flex items-center fixed z-[100] w-full bg-white top-10 `}>
                 <nav className="flex items-center justify-between h-full w-full container max-w-8xl mx-auto">
                     <section className="flex items-center gap-12">
-                        <div className="w-32 aspect-[3/1]">
-                            <Link href="/" aria-label="logo">
+                        <Link href="/" aria-label="logo">
+                            <div className="w-32 aspect-[3/1]">
                                 <PictureInternalContain
                                     alternative_text=""
                                     source="/logo/header-logo.svg"
                                 />
-                            </Link>
-                        </div>
+                            </div>
+                        </Link>
                         <div className="flex gap-10 items-center">
                             <ul className="flex">
                                 {

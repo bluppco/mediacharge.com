@@ -1,4 +1,5 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
@@ -8,6 +9,7 @@ import ServiceCard from "@/components/home/services/card/index.astro"
 // IMPORTS ASTRO ATOMS
 import HeadingTwo from "@/atoms/heading/two/index.astro"
 
+// ASTRO PROPS
 const {
 
     CDN,
@@ -16,8 +18,9 @@ const {
     services
 
 } = Astro.props
+
 ---
-<section class="py-16 bg-cover" style=`background-image: url(${ CDN + PROJECT + "/" + data.cover + "?quality=80&width=1200" })`>
+<section class="py-16 2xl:py-20 bg-cover" style=`background-image: url(${ CDN + PROJECT + "/" + data.cover + "?quality=80&width=1200" })`>
     <Container>
         <HeadingTwo>{ data.title }</HeadingTwo>
         <section class="grid md:grid-cols-4 gap-4 pt-4">

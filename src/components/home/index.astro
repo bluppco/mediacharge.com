@@ -1,21 +1,30 @@
 ---
+
 // IMPORTS ASTRO COMPONENTS
+import About from "@/components/home/about/index.astro"
+import Clients from "@/components/home/clients/index.astro"
+import Footer from "@/components/common/footer/index.astro"
+import Header from "@/components/common/header/jsx/index.jsx"
+import HeaderBanner from "@/components/common/header-banner/index.astro"
 import Hero from "@/components/home/hero/index.astro"
 import Services from "@/components/home/services/index.astro"
-import Clients from "@/components/home/clients/index.astro"
-import About from "@/components/home/about/index.astro"
 import WorkWithUs from "@/components/home/work-with-us/index.astro"
 
+// ASTRO PROPS
 const {
 
     CDN,
     clients,
+    ENVIRONMENT,
     home_data,
     PROJECT,
     services
 
 } = Astro.props
+
 ---
+<HeaderBanner ENVIRONMENT={ ENVIRONMENT } />
+<Header />
 <Hero
     CDN={ CDN }
     data={ home_data.hero }
@@ -35,3 +44,4 @@ const {
 />
 <About data={ home_data.about } />
 <WorkWithUs data={ home_data.work_with_us } />
+<Footer />
