@@ -25,10 +25,10 @@ Blupp Website: https://mediacharge.blupp.co
 ### Installation
 
 #### Clone the repository
-git clone https://github.com/your-username/mediacharge-clone.git
+git clone https://github.com/bluppco/mediacharge.com.git
 
 #### Navigate to the project directory
-cd mediacharge-clone
+cd mediacharge.com
 
 #### Install dependencies
 npm install
