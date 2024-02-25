@@ -4,11 +4,10 @@ import { motion, AnimatePresence } from "framer-motion"
 // IMPORTS REACT
 import { useState } from "react"
 
-// IMPORTS COMPONENTS
-import Li from "./li/index"
-
 // IMPORTS ATOMS
 import Link from "@/atoms/link/jsx/index.jsx"
+import ListItem from "@/atoms/header/mobile/list-item/index.jsx"
+import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
 
 const HeaderMobile = ( props ) => {
 
@@ -17,12 +16,11 @@ const HeaderMobile = ( props ) => {
     return (
         <header className="md:hidden bg-white px-4 z-[100] py-4 border-b border-gray-100">
             <div className="flex justify-between items-center relative">
-                <Link href="/" aria_label="">
+                <Link href="/" aria_label="header logo">
                     <div className="w-24 aspect-[5/2]">
-                        <img
-                            src="/logo/header-logo.svg"
-                            alt=""
-                            className="w-full h-full"
+                        <PictureInternalContain
+                            alternative_text="header logo"
+                            source="/logo/header-logo.svg"
                         />
                     </div>
                 </Link>
@@ -35,19 +33,23 @@ const HeaderMobile = ( props ) => {
                         {
 
                             isOpen &&
-                            <img
-                                src="/icons/close.svg"
-                                className="w-6 aspect-square"
-                            />
+                            <div className="w-6 aspect-square">
+                                <PictureInternalContain
+                                    alternative_text="close icon"
+                                    source="/icons/close.svg"
+                                />
+                            </div>
 
                         }
                         {
 
                             !isOpen &&
-                            <img
-                                src="/icons/menu.svg"
-                                className="w-5 aspect-square"
-                            />
+                            <div className="w-5 aspect-square">
+                                <PictureInternalContain
+                                    alternative_text="menu icon"
+                                    source="/icons/menu.svg"
+                                />
+                            </div>
 
                         }
                     </div>
@@ -70,11 +72,11 @@ const HeaderMobile = ( props ) => {
                     >
                         <div className={`flex flex-col gap-1 items-center justify-center h-full relative ${ isOpen ? "z-[100]" : "hidden"}`}>
                             <ul className="flex flex-col justify-center items-center gap-8">
-                                <Li>Services</Li>
-                                <Li>Industries</Li>
-                                <Li>Publications</Li>
-                                <Li href="/">Home</Li>
-                                <Li href="/about-us">About Us</Li>
+                                <ListItem>Services</ListItem>
+                                <ListItem>Industries</ListItem>
+                                <ListItem>Publications</ListItem>
+                                <ListItem href="/">Home</ListItem>
+                                <ListItem href="/about-us">About Us</ListItem>
                             </ul>
                         </div>
                     </motion.div>

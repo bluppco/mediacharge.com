@@ -1,23 +1,26 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import ServiceCard from "./card.astro"
+import ServiceCard from "@/components/home/services/card/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import HeadingTwo from "@/atoms/heading/two/index.astro"
 
+// ASTRO PROPS
 const {
 
+    CDN,
     data,
-    services,
-    CDN_LINK,
-    PROJECT
+    PROJECT,
+    services
 
 } = Astro.props
+
 ---
-<section class="py-16 bg-cover" style=`background-image: url(${ CDN_LINK + PROJECT + "/" + data.cover + "?quality=80&width=1200" })`>
+<section class="py-16 2xl:py-20 bg-cover" style=`background-image: url(${ CDN + PROJECT + "/" + data.cover + "?quality=80&width=1200" })`>
     <Container>
         <HeadingTwo>{ data.title }</HeadingTwo>
         <section class="grid md:grid-cols-4 gap-4 pt-4">
@@ -28,17 +31,17 @@ const {
                     return(
                         <div class={` ${ index < 2 ? "md:col-span-2" : "" } ${ index === 2 ? "md:col-span-4" : "" } `}>
                             <ServiceCard
-                                alt={ value.title }
+                                alternative_text={ value.title }
                                 button_link={ value.button_link }
                                 button_text={ value.button_text }
+                                CDN={ CDN }
                                 description={ value.description }
-                                icon_alt={ value.title }
-                                icon_src={ value.icon_image }
-                                src={ value.cover }
-                                title={ value.title }
+                                icon_alternative_text={ value.title }
+                                icon_source={ value.icon_image }
                                 index={ index }
-                                CDN_LINK={ CDN_LINK }
                                 PROJECT={ PROJECT }
+                                source={ value.cover }
+                                title={ value.title }
                             />
                         </div>
                     )
