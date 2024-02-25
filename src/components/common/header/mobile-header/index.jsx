@@ -4,11 +4,9 @@ import { motion, AnimatePresence } from "framer-motion"
 // IMPORTS REACT
 import { useState } from "react"
 
-// IMPORTS COMPONENTS
-import ListItem from "@/atoms/header/mobile/list-item/index.jsx"
-
 // IMPORTS ATOMS
 import Link from "@/atoms/link/jsx/index.jsx"
+import ListItem from "@/atoms/header/mobile/list-item/index.jsx"
 import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
 
 const HeaderMobile = ( props ) => {

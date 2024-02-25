@@ -42,7 +42,7 @@ const Header = ( props ) => {
                         <Link href="/" aria-label="logo">
                             <div className="w-32 aspect-[3/1]">
                                 <PictureInternalContain
-                                    alternative_text=""
+                                    alternative_text="header logo"
                                     source="/logo/header-logo.svg"
                                 />
                             </div>
@@ -83,7 +83,7 @@ const Header = ( props ) => {
                                                                                         <div className="flex gap-4">
                                                                                             <div className="w-6 aspect-square">
                                                                                                 <PictureInternalContain
-                                                                                                    alternative_text=""
+                                                                                                    alternative_text={ sub_item.title }
                                                                                                     source={ "/icons/" + sub_item.src }
                                                                                                 />
                                                                                             </div>
@@ -119,7 +119,7 @@ const Header = ( props ) => {
                                                                                                 <div className="flex gap-4">
                                                                                                     <div className="w-6 aspect-square">
                                                                                                         <PictureInternalContain
-                                                                                                            alternative_text=""
+                                                                                                            alternative_text={ sub_item.title }
                                                                                                             source={ "/icons/" + sub_item.src }
                                                                                                         />
                                                                                                     </div>
@@ -141,7 +141,7 @@ const Header = ( props ) => {
                                                                                 <div className="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6">
                                                                                     <div className="w-full h-full bg-zinc-200">
                                                                                         <PictureInternal
-                                                                                            alternative_text=""
+                                                                                            alternative_text="financial prudence"
                                                                                             source="/images/financial-prudence.png"
                                                                                         />
                                                                                     </div>
@@ -155,7 +155,7 @@ const Header = ( props ) => {
                                                                                 <div className="grid grid-cols-3 gap-4 border border-zinc-200 rounded-md p-6 mt-3">
                                                                                     <div className="w-full h-full bg-zinc-200">
                                                                                         <PictureInternal
-                                                                                            alternative_text=""
+                                                                                            alternative_text="chatgpt"
                                                                                             source="/images/chatgpt.jpg"
                                                                                         />
                                                                                     </div>
@@ -171,7 +171,7 @@ const Header = ( props ) => {
 
                                                             }
                                                             <div className="bg-mc_light_pink py-6">
-                                                                <Link href="/career" aria_label="">
+                                                                <Link href="/career" aria_label="career">
                                                                     <p className="text-mc_orange font-graphik text-center text-sm">Looking for a new career? Get in touch</p>
                                                                 </Link>
                                                             </div>

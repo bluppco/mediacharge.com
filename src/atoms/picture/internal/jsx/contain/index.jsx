@@ -13,9 +13,9 @@ const PictureInternalContain = ( props ) => {
             <source media="(max-width: 375px)" srcSet={ source } />
             <source media="(max-width: 640px)" srcSet={ source } />
             <img
-                src={ source }
                 alt={ alternative_text }
                 className="w-full h-full object-contain"
+                src={ source }
             />
         </picture>
     )

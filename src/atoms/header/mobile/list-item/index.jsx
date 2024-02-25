@@ -4,7 +4,12 @@ import Link from "@/atoms/link/jsx/index.jsx"
 const ListItem = ( props ) => {
 
     // PROPS
-    const { href, aria_label } = props
+    const {
+
+        aria_label,
+        href
+
+    } = props
 
     return(
         <li className="uppercase font-graphik tracking-wider">
