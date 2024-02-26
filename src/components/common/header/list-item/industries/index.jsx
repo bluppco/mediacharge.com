@@ -50,7 +50,7 @@ const Industries = ( props ) => {
                                     <div className="w-full h-full bg-zinc-200">
                                         <PictureInternal
                                             alternative_text="financial prudence"
-                                            source="/images/financial-prudence.png"
+                                            source="/images/financial-prudence-cover.jpg"
                                         />
                                     </div>
                                     <div className="col-span-2 space-y-2">
