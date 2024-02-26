@@ -40,6 +40,13 @@ Visit http://localhost:4321 in your browser to view the cloned website.
 
 ### Details
 
+#### Variables used in .dev.vars file
+
+CDN
+ENDPOINT
+ENVIRONMENT
+PROJECT
+
 #### Fonts
 
 1. Merriweather - Bunny
@@ -47,7 +54,8 @@ Visit http://localhost:4321 in your browser to view the cloned website.
 3. Graphik Bold - 8font
 
 #### Headings
-- One : HeadingOne - text-30px md:text-36px font- Graphik Medium
-- Two : HeadingTwo - text-24px font- Graphik Medium
-- Three : HeadingThree - text-16px font- Graphik Medium
-- Four : headingFour - text-18px font- Graphik Medium
+- One : text-3xl md:text-4xl font- Graphik Medium
+- Two : text-2xl font- Graphik Medium
+- Three : text-base font- Graphik Medium
+- Four : text-lg font- Graphik Medium
+- Six : text-sm font- Graphik Medium
