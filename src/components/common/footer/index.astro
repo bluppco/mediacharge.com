@@ -24,9 +24,9 @@ import { frontmatter as footerColumnFour } from "@/content/footer-titles/colomn-
 import { frontmatter as footerColumnThree } from "@/content/footer-titles/colomn-three-title.md"
 
 ---
-<footer class="bg-mc_light_gray pt-10 2xl:pt-20 pb-32 2xl:pb-40 md:px-60">
+<footer class="bg-mc_light_gray md:px-60 pb-24 md:pb-0">
     <Container>
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-10 pb-32 pt-10 2xl:pt-20 2xl:pb-40">
             <section class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <section class="flex justify-center">
                     <div class="h-5 w-full">
@@ -79,6 +79,9 @@ import { frontmatter as footerColumnThree } from "@/content/footer-titles/colomn
                     </ul>
                 </section>
             </section>
+        </section>
+        <section class="py-4 border-t border-mc_gray/30">
+            <p class="text-sm font-graphik text-center text-mc_black">Copyright &copy; { new Date().getFullYear() } Mediacharge GmbH</p>
         </section>
     </Container>
 </footer>
